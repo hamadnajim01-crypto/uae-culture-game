@@ -7,6 +7,7 @@ const OUT = path.join(__dirname, 'docs');
 const VIEWS = path.join(__dirname, 'views');
 const PUBLIC = path.join(__dirname, 'public');
 const DATA = path.join(__dirname, 'data');
+const BASE = '/uae-culture-game'; // GitHub Pages repo name
 
 // Load content data
 const uaeContent = JSON.parse(fs.readFileSync(path.join(DATA, 'uae-content.json'), 'utf-8'));
@@ -21,7 +22,7 @@ copyDir(PUBLIC, OUT);
 // Copy data folder for client-side API shim
 copyDir(DATA, path.join(OUT, 'data'));
 
-// Pages to render — { route: { template, data } }
+// Pages to render
 const pages = {
   'index': { template: 'index.ejs', data: { title: 'UAE Culture Learning Kids' } },
   'landmarks': { template: 'landmarks.ejs', data: { title: 'Landmarks', landmarks: uaeContent.landmarks } },
@@ -42,19 +43,19 @@ const pages = {
 let count = 0;
 for (const [route, cfg] of Object.entries(pages)) {
   const templatePath = path.join(VIEWS, cfg.template);
-  const html = ejs.renderFile ? null : null; // use sync render
 
-  const rendered = ejs.render(
+  let rendered = ejs.render(
     fs.readFileSync(templatePath, 'utf-8'),
     cfg.data,
-    { filename: templatePath } // needed for includes to resolve
+    { filename: templatePath }
   );
 
+  // Rewrite absolute paths for GitHub Pages subfolder
+  rendered = rewritePaths(rendered);
+
   if (route === 'index') {
-    // index.html at root
     fs.writeFileSync(path.join(OUT, 'index.html'), rendered);
   } else {
-    // Create route/index.html so /landmarks works without .html
     const dir = path.join(OUT, route);
     fs.mkdirSync(dir, { recursive: true });
     fs.writeFileSync(path.join(dir, 'index.html'), rendered);
@@ -62,12 +63,28 @@ for (const [route, cfg] of Object.entries(pages)) {
   count++;
 }
 
-// Create 404.html (copy of index for SPA fallback)
-fs.copyFileSync(path.join(OUT, 'index.html'), path.join(OUT, '404.html'));
+// Create 404.html
+const fourOhFour = rewritePaths(fs.readFileSync(path.join(OUT, 'index.html'), 'utf-8'));
+fs.writeFileSync(path.join(OUT, '404.html'), fourOhFour);
 
-console.log(`\n  Built ${count} pages to docs/\n`);
+// Also fix api-shim.js path to data file
+const shimPath = path.join(OUT, 'js', 'api-shim.js');
+let shim = fs.readFileSync(shimPath, 'utf-8');
+shim = shim.replace('/data/uae-content.json', BASE + '/data/uae-content.json');
+fs.writeFileSync(shimPath, shim);
 
-// --- Helper ---
+console.log(`\n  Built ${count} pages to docs/ (base: ${BASE})\n`);
+
+// --- Helpers ---
+
+function rewritePaths(html) {
+  // Rewrite href="/..." and src="/..." to include base path
+  // But skip external URLs (href="https://", href="//", href="#", href="javascript:")
+  return html
+    .replace(/(href|src|action)="\/(?!\/)/g, `$1="${BASE}/`)
+    .replace(/fetch\('\/api\//g, `fetch('${BASE}/api/`);
+}
+
 function copyDir(src, dest) {
   fs.mkdirSync(dest, { recursive: true });
   for (const entry of fs.readdirSync(src, { withFileTypes: true })) {

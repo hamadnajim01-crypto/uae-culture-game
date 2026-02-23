@@ -6,7 +6,7 @@
   function loadData(){
     if(_data) return Promise.resolve(_data);
     if(_loading) return _loading;
-    _loading = fetch('/data/uae-content.json').then(function(r){return r.json()}).then(function(d){_data=d;return d});
+    _loading = fetch('/uae-culture-game/data/uae-content.json').then(function(r){return r.json()}).then(function(d){_data=d;return d});
     return _loading;
   }
 
