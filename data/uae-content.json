@@ -1,0 +1,642 @@
+{
+  "landmarks": [
+    {
+      "id": 1,
+      "name": "Burj Khalifa",
+      "nameAr": "برج خليفة",
+      "city": "Dubai",
+      "description": "The tallest building in the world at 828 meters! It has 163 floors and was completed in 2010.",
+      "funFact": "The tip of Burj Khalifa can be seen from 95 kilometers away!",
+      "emoji": "🏗️",
+      "image": "burj-khalifa"
+    },
+    {
+      "id": 2,
+      "name": "Sheikh Zayed Grand Mosque",
+      "nameAr": "جامع الشيخ زايد الكبير",
+      "city": "Abu Dhabi",
+      "description": "One of the largest mosques in the world. It has 82 domes, over 1,000 columns, and the world's largest hand-knotted carpet!",
+      "funFact": "The carpet inside weighs 35 tons and was made by 1,200 workers!",
+      "emoji": "🕌",
+      "image": "sheikh-zayed-mosque"
+    },
+    {
+      "id": 3,
+      "name": "Museum of the Future",
+      "nameAr": "متحف المستقبل",
+      "city": "Dubai",
+      "description": "A unique torus-shaped building covered in Arabic calligraphy. It showcases future technologies and innovations.",
+      "funFact": "The building has no pillars inside — it's held up by its shell structure!",
+      "emoji": "🔮",
+      "image": "museum-future"
+    },
+    {
+      "id": 4,
+      "name": "Louvre Abu Dhabi",
+      "nameAr": "لوفر أبوظبي",
+      "city": "Abu Dhabi",
+      "description": "An art museum on Saadiyat Island with a stunning dome that creates a 'rain of light' effect.",
+      "funFact": "The dome weighs about 7,500 tons — heavier than the Eiffel Tower!",
+      "emoji": "🎨",
+      "image": "louvre-abudhabi"
+    },
+    {
+      "id": 5,
+      "name": "Al Ain Oasis",
+      "nameAr": "واحة العين",
+      "city": "Al Ain",
+      "description": "A UNESCO World Heritage Site with over 147,000 date palm trees! It shows the ancient falaj irrigation system.",
+      "funFact": "The falaj water system is over 3,000 years old!",
+      "emoji": "🌴",
+      "image": "al-ain-oasis"
+    },
+    {
+      "id": 6,
+      "name": "Dubai Frame",
+      "nameAr": "برواز دبي",
+      "city": "Dubai",
+      "description": "A 150-meter tall frame-shaped landmark. One side shows old Dubai, the other shows new Dubai!",
+      "funFact": "It is the largest picture frame in the world!",
+      "emoji": "🖼️",
+      "image": "dubai-frame"
+    }
+  ],
+
+  "traditions": [
+    {
+      "id": 1,
+      "name": "Falconry",
+      "nameAr": "الصقارة",
+      "description": "Falconry has been practiced in the UAE for thousands of years. Falcons were used for hunting in the desert. Today, it's a beloved sport and cultural symbol.",
+      "emoji": "🦅"
+    },
+    {
+      "id": 2,
+      "name": "Pearl Diving",
+      "nameAr": "الغوص",
+      "description": "Before oil was discovered, pearl diving was the main source of income. Divers would hold their breath and dive deep into the Arabian Gulf to find precious pearls.",
+      "emoji": "🤿"
+    },
+    {
+      "id": 3,
+      "name": "Camel Racing",
+      "nameAr": "سباق الهجن",
+      "description": "Camel racing is a popular traditional sport. Camels can run up to 65 km/h! Modern races use robot jockeys controlled by remote.",
+      "emoji": "🐫"
+    },
+    {
+      "id": 4,
+      "name": "Henna Art",
+      "nameAr": "الحناء",
+      "description": "Henna is used to create beautiful temporary designs on hands and feet, especially for celebrations like weddings and Eid.",
+      "emoji": "✋"
+    },
+    {
+      "id": 5,
+      "name": "Al Ayyala Dance",
+      "nameAr": "العيالة",
+      "description": "A traditional group dance where men stand in rows, swaying bamboo sticks in rhythm with drums and singing. It's a UNESCO heritage tradition!",
+      "emoji": "💃"
+    },
+    {
+      "id": 6,
+      "name": "Arabic Coffee (Gahwa)",
+      "nameAr": "القهوة العربية",
+      "description": "Arabic coffee is a symbol of hospitality. It's made with cardamom and saffron, served in small cups called 'finjaan', and always offered to guests.",
+      "emoji": "☕"
+    }
+  ],
+
+  "foods": [
+    {
+      "id": 1,
+      "name": "Machboos",
+      "nameAr": "مجبوس",
+      "description": "The national dish! Spiced rice with meat (chicken, lamb, or fish), flavored with saffron, dried limes, and aromatic spices.",
+      "emoji": "🍛",
+      "ingredients": ["Rice", "Meat", "Saffron", "Dried Lime", "Onions", "Tomatoes"]
+    },
+    {
+      "id": 2,
+      "name": "Luqaimat",
+      "nameAr": "لقيمات",
+      "description": "Sweet crispy dumplings drizzled with date syrup (dibs). They're crunchy on the outside and soft on the inside — a favorite dessert!",
+      "emoji": "🍩",
+      "ingredients": ["Flour", "Yeast", "Sugar", "Saffron", "Date Syrup"]
+    },
+    {
+      "id": 3,
+      "name": "Harees",
+      "nameAr": "هريس",
+      "description": "A comforting dish made of wheat and meat, slow-cooked until smooth and creamy. Very popular during Ramadan!",
+      "emoji": "🥣",
+      "ingredients": ["Wheat", "Meat", "Butter", "Salt", "Cinnamon"]
+    },
+    {
+      "id": 4,
+      "name": "Balaleet",
+      "nameAr": "بلاليط",
+      "description": "Sweet vermicelli noodles with cardamom and saffron, topped with an egg omelette. It's a traditional breakfast!",
+      "emoji": "🍝",
+      "ingredients": ["Vermicelli", "Sugar", "Cardamom", "Saffron", "Eggs", "Butter"]
+    },
+    {
+      "id": 5,
+      "name": "Thareed",
+      "nameAr": "ثريد",
+      "description": "Thin bread layered with a rich meat and vegetable stew. It's said to be one of Prophet Muhammad's favorite dishes.",
+      "emoji": "🫓",
+      "ingredients": ["Bread", "Meat", "Vegetables", "Tomatoes", "Spices"]
+    },
+    {
+      "id": 6,
+      "name": "Dates",
+      "nameAr": "التمر",
+      "description": "The UAE grows over 200 varieties of dates! Dates are a symbol of generosity and are always offered to guests with Arabic coffee.",
+      "emoji": "🌴",
+      "ingredients": ["Fresh dates from palm trees!"]
+    }
+  ],
+
+  "arabicWords": [
+    { "word": "مرحبا", "transliteration": "Marhaba", "meaning": "Hello", "emoji": "👋" },
+    { "word": "شكراً", "transliteration": "Shukran", "meaning": "Thank you", "emoji": "🙏" },
+    { "word": "سلام", "transliteration": "Salaam", "meaning": "Peace", "emoji": "☮️" },
+    { "word": "صديق", "transliteration": "Sadeeq", "meaning": "Friend", "emoji": "🤝" },
+    { "word": "ماء", "transliteration": "Maa", "meaning": "Water", "emoji": "💧" },
+    { "word": "شمس", "transliteration": "Shams", "meaning": "Sun", "emoji": "☀️" },
+    { "word": "قمر", "transliteration": "Qamar", "meaning": "Moon", "emoji": "🌙" },
+    { "word": "نجمة", "transliteration": "Najma", "meaning": "Star", "emoji": "⭐" },
+    { "word": "بحر", "transliteration": "Bahr", "meaning": "Sea", "emoji": "🌊" },
+    { "word": "صحراء", "transliteration": "Sahraa", "meaning": "Desert", "emoji": "🏜️" },
+    { "word": "جمل", "transliteration": "Jamal", "meaning": "Camel", "emoji": "🐪" },
+    { "word": "كتاب", "transliteration": "Kitaab", "meaning": "Book", "emoji": "📖" },
+    { "word": "عائلة", "transliteration": "Aa'ila", "meaning": "Family", "emoji": "👨‍👩‍👧‍👦" },
+    { "word": "وطن", "transliteration": "Watan", "meaning": "Homeland", "emoji": "🇦🇪" },
+    { "word": "حب", "transliteration": "Hubb", "meaning": "Love", "emoji": "❤️" },
+    { "word": "نخلة", "transliteration": "Nakhla", "meaning": "Palm Tree", "emoji": "🌴" }
+  ],
+
+  "quizQuestions": [
+    {
+      "question": "What is the tallest building in the world?",
+      "options": ["Burj Khalifa", "Eiffel Tower", "Empire State Building", "CN Tower"],
+      "correct": 0,
+      "fact": "Burj Khalifa stands at 828 meters tall!"
+    },
+    {
+      "question": "What is the capital city of the UAE?",
+      "options": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"],
+      "correct": 1,
+      "fact": "Abu Dhabi has been the capital since the UAE was formed in 1971!"
+    },
+    {
+      "question": "How many emirates make up the UAE?",
+      "options": ["5", "6", "7", "8"],
+      "correct": 2,
+      "fact": "The 7 emirates are: Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, and Fujairah!"
+    },
+    {
+      "question": "What bird is a symbol of UAE culture?",
+      "options": ["Eagle", "Falcon", "Parrot", "Flamingo"],
+      "correct": 1,
+      "fact": "Falcons are so important that they even have their own passports in the UAE!"
+    },
+    {
+      "question": "What was the main industry before oil was discovered?",
+      "options": ["Farming", "Pearl Diving", "Fishing", "Trading"],
+      "correct": 1,
+      "fact": "Pearl diving was the backbone of the UAE economy for centuries!"
+    },
+    {
+      "question": "What is the traditional UAE national dish?",
+      "options": ["Shawarma", "Machboos", "Falafel", "Hummus"],
+      "correct": 1,
+      "fact": "Machboos is spiced rice with meat, flavored with saffron and dried limes!"
+    },
+    {
+      "question": "Who is known as the Father of the Nation?",
+      "options": ["Sheikh Zayed bin Sultan Al Nahyan", "Sheikh Mohammed bin Rashid", "Sheikh Khalifa", "Sheikh Hamdan"],
+      "correct": 0,
+      "fact": "Sheikh Zayed united the seven emirates in 1971 to form the UAE!"
+    },
+    {
+      "question": "What is 'Gahwa'?",
+      "options": ["A dance", "Arabic coffee", "A type of bread", "A game"],
+      "correct": 1,
+      "fact": "Arabic coffee with dates is the ultimate symbol of UAE hospitality!"
+    },
+    {
+      "question": "What color is NOT on the UAE flag?",
+      "options": ["Red", "Green", "Blue", "White"],
+      "correct": 2,
+      "fact": "The UAE flag has red, green, white, and black — representing unity, fertility, peace, and strength!"
+    },
+    {
+      "question": "When is UAE National Day?",
+      "options": ["January 1st", "December 2nd", "November 30th", "March 21st"],
+      "correct": 1,
+      "fact": "December 2nd, 1971 is when the UAE was officially united!"
+    },
+    {
+      "question": "What is the currency of the UAE?",
+      "options": ["Riyal", "Dirham", "Dinar", "Pound"],
+      "correct": 1,
+      "fact": "The UAE Dirham (AED) has been the official currency since 1973!"
+    },
+    {
+      "question": "What traditional dance involves swaying bamboo sticks?",
+      "options": ["Dabke", "Al Ayyala", "Khaleegy", "Yowla"],
+      "correct": 1,
+      "fact": "Al Ayyala is recognized by UNESCO as an Intangible Cultural Heritage!"
+    },
+    {
+      "question": "What sweet treat is drizzled with date syrup?",
+      "options": ["Kunafa", "Baklava", "Luqaimat", "Halwa"],
+      "correct": 2,
+      "fact": "Luqaimat are crunchy on the outside and fluffy on the inside!"
+    },
+    {
+      "question": "What is the meaning of 'Shukran' in Arabic?",
+      "options": ["Hello", "Goodbye", "Thank you", "Please"],
+      "correct": 2,
+      "fact": "Shukran (شكراً) is one of the most used Arabic words worldwide!"
+    },
+    {
+      "question": "Which UAE city is known as the 'Garden City'?",
+      "options": ["Dubai", "Sharjah", "Al Ain", "Fujairah"],
+      "correct": 2,
+      "fact": "Al Ain is famous for its lush oases and is a UNESCO World Heritage Site!"
+    },
+    {
+      "question": "What is the largest emirate by area?",
+      "options": ["Dubai", "Abu Dhabi", "Sharjah", "Ras Al Khaimah"],
+      "correct": 1,
+      "fact": "Abu Dhabi covers about 87% of the UAE's total area!"
+    },
+    {
+      "question": "What is the UAE's official language?",
+      "options": ["English", "Arabic", "Hindi", "Urdu"],
+      "correct": 1,
+      "fact": "Arabic is the official language, but English is widely spoken!"
+    },
+    {
+      "question": "What planet did the UAE send a probe to in 2021?",
+      "options": ["Venus", "Jupiter", "Mars", "Saturn"],
+      "correct": 2,
+      "fact": "The Hope Probe (Al Amal) reached Mars in February 2021 — a first for the Arab world!"
+    },
+    {
+      "question": "What traditional clothing do Emirati men wear?",
+      "options": ["Thobe", "Kandura", "Kurta", "Kimono"],
+      "correct": 1,
+      "fact": "The Kandura (or Dishdasha) is the traditional white robe worn by Emirati men!"
+    },
+    {
+      "question": "Which emirate is the smallest by area?",
+      "options": ["Fujairah", "Ajman", "Umm Al Quwain", "Ras Al Khaimah"],
+      "correct": 1,
+      "fact": "Ajman is the smallest emirate at only 259 square kilometers!"
+    },
+    {
+      "question": "What sea borders the UAE to the north?",
+      "options": ["Red Sea", "Arabian Gulf", "Mediterranean Sea", "Indian Ocean"],
+      "correct": 1,
+      "fact": "The Arabian Gulf (also called Persian Gulf) borders the UAE to the north!"
+    },
+    {
+      "question": "What does UAE stand for?",
+      "options": ["United Arab Emirates", "Union of Arab Economies", "United Arabian Empire", "United Arab Entity"],
+      "correct": 0,
+      "fact": "UAE stands for United Arab Emirates — 7 emirates united as one nation!"
+    },
+    {
+      "question": "What animal appears on the UAE coat of arms?",
+      "options": ["Eagle", "Falcon", "Lion", "Horse"],
+      "correct": 1,
+      "fact": "The golden falcon (Saqr) appears on the official emblem of the UAE!"
+    },
+    {
+      "question": "What is the tallest hotel in the world, located in Dubai?",
+      "options": ["Burj Al Arab", "Gevora Hotel", "Atlantis", "JW Marriott"],
+      "correct": 1,
+      "fact": "Gevora Hotel in Dubai stands at 356 meters — the world's tallest hotel!"
+    },
+    {
+      "question": "What man-made islands in Dubai are shaped like trees?",
+      "options": ["The World Islands", "Palm Islands", "Bluewaters Island", "Al Marjan Island"],
+      "correct": 1,
+      "fact": "The Palm Jumeirah and Palm Jebel Ali are shaped like palm trees and visible from space!"
+    },
+    {
+      "question": "Which emirate has the longest coastline on the Gulf of Oman?",
+      "options": ["Sharjah", "Fujairah", "Ras Al Khaimah", "Ajman"],
+      "correct": 1,
+      "fact": "Fujairah is the only emirate entirely on the Gulf of Oman's east coast!"
+    },
+    {
+      "question": "What is 'Marhaba' in Arabic?",
+      "options": ["Goodbye", "Hello", "Thank you", "Please"],
+      "correct": 1,
+      "fact": "Marhaba (مرحبا) means Hello — the most common greeting in Arabic!"
+    },
+    {
+      "question": "What desert covers most of the UAE?",
+      "options": ["Sahara Desert", "Gobi Desert", "Rub al Khali", "Thar Desert"],
+      "correct": 2,
+      "fact": "The Rub al Khali (Empty Quarter) is the world's largest sand desert!"
+    },
+    {
+      "question": "What traditional perfume is popular in the UAE?",
+      "options": ["Rose water", "Oud", "Lavender", "Jasmine"],
+      "correct": 1,
+      "fact": "Oud (agarwood) is one of the most expensive perfume ingredients in the world!"
+    }
+  ],
+
+  "sectionQuizzes": {
+    "landmarks": [
+      {
+        "question": "How tall is the Burj Khalifa?",
+        "options": ["500 meters", "700 meters", "828 meters", "1000 meters"],
+        "correct": 2,
+        "fact": "Burj Khalifa is 828 meters tall with 163 floors — the tallest building on Earth!"
+      },
+      {
+        "question": "Where is the Sheikh Zayed Grand Mosque located?",
+        "options": ["Dubai", "Abu Dhabi", "Sharjah", "Al Ain"],
+        "correct": 1,
+        "fact": "The Sheikh Zayed Grand Mosque is in Abu Dhabi, with 82 domes and 1,000+ columns!"
+      },
+      {
+        "question": "What shape is the Museum of the Future?",
+        "options": ["Square", "Torus (donut)", "Pyramid", "Sphere"],
+        "correct": 1,
+        "fact": "The Museum of the Future is torus-shaped and covered in Arabic calligraphy!"
+      },
+      {
+        "question": "What special effect does the Louvre Abu Dhabi's dome create?",
+        "options": ["Rainbow colors", "Rain of light", "Moving shadows", "Star patterns"],
+        "correct": 1,
+        "fact": "The Louvre Abu Dhabi's dome creates a stunning 'rain of light' effect!"
+      },
+      {
+        "question": "What ancient water system is found at Al Ain Oasis?",
+        "options": ["Aqueduct", "Falaj", "Canal", "Dam"],
+        "correct": 1,
+        "fact": "The falaj irrigation system at Al Ain is over 3,000 years old!"
+      },
+      {
+        "question": "How tall is the Dubai Frame?",
+        "options": ["100 meters", "150 meters", "200 meters", "250 meters"],
+        "correct": 1,
+        "fact": "The Dubai Frame is 150 meters tall — the largest picture frame in the world!"
+      },
+      {
+        "question": "How many floors does Burj Khalifa have?",
+        "options": ["100", "130", "163", "200"],
+        "correct": 2,
+        "fact": "Burj Khalifa has 163 floors and was completed in 2010!"
+      },
+      {
+        "question": "How heavy is the carpet inside the Sheikh Zayed Mosque?",
+        "options": ["5 tons", "15 tons", "35 tons", "50 tons"],
+        "correct": 2,
+        "fact": "The world's largest hand-knotted carpet weighs 35 tons and took 1,200 workers to make!"
+      },
+      {
+        "question": "What UNESCO site has over 147,000 date palm trees?",
+        "options": ["Dubai Frame", "Louvre Abu Dhabi", "Al Ain Oasis", "Museum of the Future"],
+        "correct": 2,
+        "fact": "Al Ain Oasis is a UNESCO World Heritage Site with 147,000+ date palms!"
+      },
+      {
+        "question": "How heavy is the dome of the Louvre Abu Dhabi?",
+        "options": ["1,000 tons", "3,500 tons", "7,500 tons", "10,000 tons"],
+        "correct": 2,
+        "fact": "The Louvre dome weighs 7,500 tons — heavier than the Eiffel Tower!"
+      }
+    ],
+    "traditions": [
+      {
+        "question": "What were falcons traditionally used for in the UAE?",
+        "options": ["Racing", "Hunting", "Guarding homes", "Delivering messages"],
+        "correct": 1,
+        "fact": "Falcons were used for hunting in the desert for thousands of years!"
+      },
+      {
+        "question": "What was the main source of income before oil was discovered?",
+        "options": ["Gold mining", "Pearl diving", "Silk trading", "Farming"],
+        "correct": 1,
+        "fact": "Pearl diving in the Arabian Gulf was the backbone of the UAE economy!"
+      },
+      {
+        "question": "How fast can racing camels run?",
+        "options": ["30 km/h", "45 km/h", "65 km/h", "80 km/h"],
+        "correct": 2,
+        "fact": "Camels can run up to 65 km/h! Modern races use robot jockeys!"
+      },
+      {
+        "question": "What is Al Ayyala?",
+        "options": ["A type of food", "A traditional dance", "A board game", "A type of fabric"],
+        "correct": 1,
+        "fact": "Al Ayyala is a UNESCO heritage dance where men sway bamboo sticks to drumbeats!"
+      },
+      {
+        "question": "What spice is used in Arabic coffee (Gahwa)?",
+        "options": ["Cinnamon", "Cardamom", "Vanilla", "Nutmeg"],
+        "correct": 1,
+        "fact": "Arabic coffee is made with cardamom and saffron — a symbol of hospitality!"
+      },
+      {
+        "question": "What is henna used for in the UAE?",
+        "options": ["Cooking", "Temporary body art", "Building houses", "Making clothes"],
+        "correct": 1,
+        "fact": "Henna creates beautiful temporary designs on hands and feet for celebrations!"
+      },
+      {
+        "question": "What are modern camel races controlled by?",
+        "options": ["Humans on top", "Robot jockeys", "Remote control cars", "AI systems"],
+        "correct": 1,
+        "fact": "Robot jockeys are controlled by remote and weigh much less than human riders!"
+      },
+      {
+        "question": "What cup is Arabic coffee served in?",
+        "options": ["Mug", "Finjaan", "Bowl", "Glass"],
+        "correct": 1,
+        "fact": "Arabic coffee is served in small handleless cups called 'finjaan'!"
+      },
+      {
+        "question": "What did pearl divers search for in the Arabian Gulf?",
+        "options": ["Gold", "Fish", "Precious pearls", "Coral"],
+        "correct": 2,
+        "fact": "Divers held their breath and dived deep to find precious pearls!"
+      },
+      {
+        "question": "Al Ayyala dance is recognized by which organization?",
+        "options": ["FIFA", "UNESCO", "WHO", "NASA"],
+        "correct": 1,
+        "fact": "Al Ayyala is a UNESCO Intangible Cultural Heritage tradition!"
+      }
+    ],
+    "food": [
+      {
+        "question": "What is the national dish of the UAE?",
+        "options": ["Harees", "Thareed", "Machboos", "Balaleet"],
+        "correct": 2,
+        "fact": "Machboos is spiced rice with meat, flavored with saffron and dried limes!"
+      },
+      {
+        "question": "What are Luqaimat drizzled with?",
+        "options": ["Honey", "Chocolate", "Date syrup", "Maple syrup"],
+        "correct": 2,
+        "fact": "Luqaimat are sweet dumplings drizzled with date syrup (dibs) — crunchy outside, soft inside!"
+      },
+      {
+        "question": "When is Harees especially popular?",
+        "options": ["Eid only", "Ramadan", "National Day", "Summer"],
+        "correct": 1,
+        "fact": "Harees is a comforting wheat-and-meat dish that's very popular during Ramadan!"
+      },
+      {
+        "question": "What meal is Balaleet traditionally eaten for?",
+        "options": ["Lunch", "Dinner", "Breakfast", "Snack"],
+        "correct": 2,
+        "fact": "Balaleet is a traditional breakfast — sweet vermicelli topped with an egg omelette!"
+      },
+      {
+        "question": "How many varieties of dates grow in the UAE?",
+        "options": ["50", "100", "200+", "500+"],
+        "correct": 2,
+        "fact": "The UAE grows over 200 varieties of dates — always offered with Arabic coffee!"
+      },
+      {
+        "question": "What is Thareed layered with?",
+        "options": ["Rice", "Noodles", "Thin bread", "Pastry"],
+        "correct": 2,
+        "fact": "Thareed is thin bread layered with a rich meat and vegetable stew!"
+      },
+      {
+        "question": "What spice gives Machboos its yellow color?",
+        "options": ["Turmeric", "Paprika", "Saffron", "Curry powder"],
+        "correct": 2,
+        "fact": "Saffron gives Machboos its beautiful golden color and unique flavor!"
+      },
+      {
+        "question": "What gives Balaleet its sweet flavor?",
+        "options": ["Honey", "Sugar and cardamom", "Chocolate", "Maple syrup"],
+        "correct": 1,
+        "fact": "Balaleet uses sugar and cardamom for its sweet taste, topped with egg omelette!"
+      },
+      {
+        "question": "What is served with dates as a symbol of hospitality?",
+        "options": ["Tea", "Juice", "Arabic coffee", "Milk"],
+        "correct": 2,
+        "fact": "Dates and Arabic coffee together are the ultimate symbol of Emirati hospitality!"
+      },
+      {
+        "question": "What texture is Harees when fully cooked?",
+        "options": ["Crunchy", "Smooth and creamy", "Chewy", "Flaky"],
+        "correct": 1,
+        "fact": "Harees is slow-cooked until the wheat and meat become smooth and creamy!"
+      }
+    ]
+  },
+
+  "fillInTheBlank": [
+    { "sentence": "The tallest building in the world is the ___ in Dubai.", "answer": "Burj Khalifa", "wordBank": ["Burj Khalifa", "Dubai Frame", "Louvre", "Al Ain Oasis"], "hint": "It's 828 meters tall!" },
+    { "sentence": "The UAE is made up of ___ emirates.", "answer": "seven", "wordBank": ["five", "six", "seven", "eight"], "hint": "One more than six!" },
+    { "sentence": "The capital city of the UAE is ___.", "answer": "Abu Dhabi", "wordBank": ["Dubai", "Abu Dhabi", "Sharjah", "Ajman"], "hint": "Not Dubai!" },
+    { "sentence": "___ is the traditional sport of training birds of prey.", "answer": "Falconry", "wordBank": ["Falconry", "Horse racing", "Archery", "Fencing"], "hint": "Think of falcons!" },
+    { "sentence": "The national dish of the UAE is ___.", "answer": "Machboos", "wordBank": ["Machboos", "Hummus", "Shawarma", "Kebab"], "hint": "Spiced rice with meat!" },
+    { "sentence": "Arabic coffee is called ___.", "answer": "Gahwa", "wordBank": ["Gahwa", "Chai", "Latte", "Espresso"], "hint": "Made with cardamom and saffron!" },
+    { "sentence": "The ___ is the world's largest picture frame.", "answer": "Dubai Frame", "wordBank": ["Dubai Frame", "Burj Khalifa", "Louvre", "Museum"], "hint": "It's 150 meters tall!" },
+    { "sentence": "Pearl diving took place in the ___ Gulf.", "answer": "Arabian", "wordBank": ["Arabian", "Mexican", "Atlantic", "Pacific"], "hint": "Named after the Arab world!" },
+    { "sentence": "UAE National Day is celebrated on December ___.", "answer": "2nd", "wordBank": ["1st", "2nd", "15th", "25th"], "hint": "The day the 7 emirates united in 1971!" },
+    { "sentence": "'Shukran' means ___ in Arabic.", "answer": "Thank you", "wordBank": ["Hello", "Goodbye", "Thank you", "Please"], "hint": "You say it when someone helps you!" },
+    { "sentence": "The ___ Oasis has over 147,000 date palm trees.", "answer": "Al Ain", "wordBank": ["Al Ain", "Dubai", "Abu Dhabi", "Sharjah"], "hint": "Known as the Garden City!" },
+    { "sentence": "Sweet dumplings drizzled with date syrup are called ___.", "answer": "Luqaimat", "wordBank": ["Luqaimat", "Harees", "Balaleet", "Thareed"], "hint": "Crunchy outside, soft inside!" },
+    { "sentence": "The ___ dance involves swaying bamboo sticks.", "answer": "Al Ayyala", "wordBank": ["Al Ayyala", "Salsa", "Ballet", "Dabke"], "hint": "A UNESCO heritage tradition!" },
+    { "sentence": "The UAE's currency is the ___.", "answer": "Dirham", "wordBank": ["Dirham", "Riyal", "Dollar", "Pound"], "hint": "Abbreviated as AED!" },
+    { "sentence": "The Hope Probe was sent to ___.", "answer": "Mars", "wordBank": ["Mars", "Moon", "Venus", "Jupiter"], "hint": "The red planet!" }
+  ],
+
+  "trueFalse": [
+    { "statement": "The Burj Khalifa has 163 floors.", "answer": true, "fact": "Yes! Burj Khalifa has exactly 163 floors." },
+    { "statement": "The UAE flag has a blue stripe.", "answer": false, "fact": "The UAE flag has red, green, white, and black — no blue!" },
+    { "statement": "Falcons in the UAE can have their own passports.", "answer": true, "fact": "True! UAE falcons get special falcon passports for travel." },
+    { "statement": "Dubai is the capital of the UAE.", "answer": false, "fact": "Abu Dhabi is the capital — Dubai is the most populous city!" },
+    { "statement": "The UAE was formed in 1971.", "answer": true, "fact": "The UAE was formed on December 2nd, 1971!" },
+    { "statement": "Machboos is a type of dessert.", "answer": false, "fact": "Machboos is the national dish — spiced rice with meat, not a dessert!" },
+    { "statement": "The Sheikh Zayed Mosque has 82 domes.", "answer": true, "fact": "The Sheikh Zayed Grand Mosque has exactly 82 domes!" },
+    { "statement": "Camels can run up to 65 km/h.", "answer": true, "fact": "Racing camels can reach speeds of 65 km/h!" },
+    { "statement": "The Louvre Abu Dhabi dome is lighter than the Eiffel Tower.", "answer": false, "fact": "The dome weighs 7,500 tons — heavier than the Eiffel Tower!" },
+    { "statement": "Arabic coffee is served in large mugs.", "answer": false, "fact": "Arabic coffee is served in small cups called 'finjaan'!" },
+    { "statement": "The UAE has 7 emirates.", "answer": true, "fact": "Abu Dhabi, Dubai, Sharjah, Ajman, Umm Al Quwain, Ras Al Khaimah, and Fujairah!" },
+    { "statement": "The falaj water system is over 3,000 years old.", "answer": true, "fact": "The ancient falaj irrigation at Al Ain dates back over 3,000 years!" },
+    { "statement": "Henna is a permanent tattoo.", "answer": false, "fact": "Henna creates temporary designs that fade in 1-3 weeks!" },
+    { "statement": "The Museum of the Future is shaped like a donut.", "answer": true, "fact": "It has a torus (donut) shape covered in Arabic calligraphy!" },
+    { "statement": "Luqaimat are savory meat pies.", "answer": false, "fact": "Luqaimat are sweet dumplings drizzled with date syrup!" },
+    { "statement": "The UAE sent a probe called 'Hope' to Mars.", "answer": true, "fact": "The Hope Probe reached Mars in February 2021!" },
+    { "statement": "Oud is a type of traditional food.", "answer": false, "fact": "Oud is a luxurious perfume ingredient from agarwood!" },
+    { "statement": "Al Ain is known as the Garden City.", "answer": true, "fact": "Al Ain's lush oases earned it the nickname Garden City!" },
+    { "statement": "The Palm Islands are shaped like stars.", "answer": false, "fact": "The Palm Islands are shaped like palm trees!" },
+    { "statement": "The UAE Dirham has been used since 1973.", "answer": true, "fact": "The AED became the official currency in 1973!" }
+  ],
+
+  "listeningChallenge": [
+    { "arabicWord": "مرحبا", "transliteration": "Marhaba", "correctMeaning": "Hello", "wrongOptions": ["Goodbye", "Thank you", "Please"] },
+    { "arabicWord": "شكراً", "transliteration": "Shukran", "correctMeaning": "Thank you", "wrongOptions": ["Hello", "Sorry", "Welcome"] },
+    { "arabicWord": "سلام", "transliteration": "Salaam", "correctMeaning": "Peace", "wrongOptions": ["War", "Water", "Friend"] },
+    { "arabicWord": "صديق", "transliteration": "Sadeeq", "correctMeaning": "Friend", "wrongOptions": ["Enemy", "Brother", "Teacher"] },
+    { "arabicWord": "ماء", "transliteration": "Maa", "correctMeaning": "Water", "wrongOptions": ["Fire", "Sand", "Air"] },
+    { "arabicWord": "شمس", "transliteration": "Shams", "correctMeaning": "Sun", "wrongOptions": ["Moon", "Star", "Cloud"] },
+    { "arabicWord": "قمر", "transliteration": "Qamar", "correctMeaning": "Moon", "wrongOptions": ["Sun", "Star", "Sky"] },
+    { "arabicWord": "نجمة", "transliteration": "Najma", "correctMeaning": "Star", "wrongOptions": ["Moon", "Planet", "Galaxy"] },
+    { "arabicWord": "بحر", "transliteration": "Bahr", "correctMeaning": "Sea", "wrongOptions": ["Desert", "Mountain", "River"] },
+    { "arabicWord": "صحراء", "transliteration": "Sahraa", "correctMeaning": "Desert", "wrongOptions": ["Forest", "Ocean", "Island"] },
+    { "arabicWord": "جمل", "transliteration": "Jamal", "correctMeaning": "Camel", "wrongOptions": ["Horse", "Falcon", "Lion"] },
+    { "arabicWord": "كتاب", "transliteration": "Kitaab", "correctMeaning": "Book", "wrongOptions": ["Pen", "School", "Paper"] },
+    { "arabicWord": "عائلة", "transliteration": "Aa'ila", "correctMeaning": "Family", "wrongOptions": ["Friend", "Teacher", "Neighbor"] },
+    { "arabicWord": "حب", "transliteration": "Hubb", "correctMeaning": "Love", "wrongOptions": ["Hate", "Fear", "Hope"] },
+    { "arabicWord": "وطن", "transliteration": "Watan", "correctMeaning": "Homeland", "wrongOptions": ["Village", "City", "Country"] }
+  ],
+
+  "wordScramble": [
+    { "word": "KHALIFA", "hint": "Tallest building in the world (Burj ___)", "category": "landmarks" },
+    { "word": "FALCON", "hint": "A bird used for hunting in the UAE", "category": "traditions" },
+    { "word": "MACHBOOS", "hint": "The national dish of the UAE", "category": "food" },
+    { "word": "DIRHAM", "hint": "The currency of the UAE", "category": "general" },
+    { "word": "MOSQUE", "hint": "A place of worship (Sheikh Zayed Grand ___)", "category": "landmarks" },
+    { "word": "PEARL", "hint": "Divers searched for these in the Arabian Gulf", "category": "traditions" },
+    { "word": "DATES", "hint": "Sweet fruit from palm trees", "category": "food" },
+    { "word": "SAFFRON", "hint": "Expensive spice that makes food golden", "category": "food" },
+    { "word": "CAMEL", "hint": "Desert animal used for racing", "category": "traditions" },
+    { "word": "ARABIC", "hint": "The official language of the UAE", "category": "general" },
+    { "word": "OASIS", "hint": "Al Ain ___ has 147,000 palm trees", "category": "landmarks" },
+    { "word": "HENNA", "hint": "Temporary body art for celebrations", "category": "traditions" },
+    { "word": "DUBAI", "hint": "Most populous city in the UAE", "category": "general" },
+    { "word": "LUQAIMAT", "hint": "Sweet dumplings with date syrup", "category": "food" },
+    { "word": "EMIRATES", "hint": "The UAE has seven of these", "category": "general" },
+    { "word": "SHUKRAN", "hint": "Arabic word meaning 'thank you'", "category": "arabic" },
+    { "word": "SALAAM", "hint": "Arabic word meaning 'peace'", "category": "arabic" },
+    { "word": "MARHABA", "hint": "Arabic word meaning 'hello'", "category": "arabic" },
+    { "word": "LOUVRE", "hint": "Famous art museum in Abu Dhabi", "category": "landmarks" },
+    { "word": "GAHWA", "hint": "Arabic word for coffee", "category": "traditions" }
+  ],
+
+  "timeline": [
+    { "year": 1820, "event": "First treaties signed with Britain", "eventAr": "توقيع أول المعاهدات مع بريطانيا", "emoji": "📜", "fact": "These peace treaties gave the region its old name — the Trucial States!" },
+    { "year": 1958, "event": "Oil discovered in Abu Dhabi", "eventAr": "اكتشاف النفط في أبوظبي", "emoji": "🛢️", "fact": "The discovery of oil transformed the UAE from a pearl-diving economy!" },
+    { "year": 1966, "event": "Sheikh Zayed becomes ruler of Abu Dhabi", "eventAr": "الشيخ زايد يصبح حاكم أبوظبي", "emoji": "👑", "fact": "Sheikh Zayed is known as the Father of the Nation!" },
+    { "year": 1971, "event": "The UAE is formed — 7 emirates unite", "eventAr": "تأسيس الإمارات — اتحاد 7 إمارات", "emoji": "🇦🇪", "fact": "December 2nd, 1971 — the day 7 emirates united under one flag!" },
+    { "year": 1973, "event": "UAE Dirham becomes the official currency", "eventAr": "الدرهم يصبح العملة الرسمية", "emoji": "💰", "fact": "The UAE Dirham replaced the Bahraini Dinar and Qatar-Dubai Riyal!" },
+    { "year": 1985, "event": "Emirates Airline takes its first flight", "eventAr": "طيران الإمارات تقوم بأول رحلة", "emoji": "✈️", "fact": "Emirates started with just 2 planes and now has over 260!" },
+    { "year": 1999, "event": "Burj Al Arab hotel opens in Dubai", "eventAr": "افتتاح فندق برج العرب في دبي", "emoji": "🏨", "fact": "The sail-shaped Burj Al Arab became the symbol of modern Dubai!" },
+    { "year": 2004, "event": "Sheikh Zayed passes away", "eventAr": "وفاة الشيخ زايد", "emoji": "🕊️", "fact": "Sheikh Zayed's legacy of unity and generosity lives on in the UAE." },
+    { "year": 2010, "event": "Burj Khalifa officially opens", "eventAr": "افتتاح برج خليفة رسمياً", "emoji": "🏗️", "fact": "Burj Khalifa at 828 meters — the tallest building in the world!" },
+    { "year": 2017, "event": "Louvre Abu Dhabi museum opens", "eventAr": "افتتاح متحف اللوفر أبوظبي", "emoji": "🎨", "fact": "The Louvre Abu Dhabi's dome weighs 7,500 tons — heavier than the Eiffel Tower!" },
+    { "year": 2021, "event": "Hope Probe reaches Mars", "eventAr": "مسبار الأمل يصل إلى المريخ", "emoji": "🚀", "fact": "The Hope Probe made the UAE the first Arab nation to reach Mars!" },
+    { "year": 2022, "event": "Museum of the Future opens in Dubai", "eventAr": "افتتاح متحف المستقبل في دبي", "emoji": "🔮", "fact": "The donut-shaped Museum of the Future has no pillars inside!" }
+  ]
+}

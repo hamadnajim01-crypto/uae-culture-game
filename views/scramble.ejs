@@ -1,0 +1,41 @@
+<%- include('partials/header') %>
+
+<div class="page-header">
+  <div class="section-badge">🔤 UNSCRAMBLE</div>
+  <h1><span class="gold" data-i18n="wordScramble">Word</span> <span data-i18n="scramblePage">Scramble</span></h1>
+  <p data-i18n="scrambleHeader">Unscramble the letters to spell UAE landmarks, foods, and traditions</p>
+</div>
+
+<div class="quiz-container">
+  <div id="scrambleStart" class="start-screen">
+    <h2 data-i18n="scrambleTitle">Word Scramble Challenge</h2>
+    <p data-i18n="scrambleDesc">The letters are all mixed up! Tap them in the right order to spell the word. 10 words to unscramble!</p>
+    <button class="btn btn-primary btn-lg" onclick="startScramble()"><span data-i18n="start">START</span> 🔤</button>
+  </div>
+
+  <div id="scrambleArea" style="display:none;">
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="scrambleProgressFill"></div></div>
+      <div class="quiz-progress-text" id="scrambleProgressText">1/10</div>
+    </div>
+    <div class="quiz-hearts" id="scrambleHearts"></div>
+    <div class="quiz-score" id="scrambleScore">SCORE: 0</div>
+
+    <div class="quiz-card" id="scrambleCard">
+      <div class="scramble-hint" id="scrambleHint"></div>
+      <div class="scramble-answer" id="scrambleAnswer"></div>
+      <div class="scramble-letters" id="scrambleLetters"></div>
+      <div class="scramble-actions">
+        <button class="btn btn-outline" onclick="clearScramble()"><span data-i18n="clear">Clear</span> ↩</button>
+        <button class="btn btn-primary" onclick="checkScramble()"><span data-i18n="check">Check</span> ✓</button>
+      </div>
+      <div class="quiz-fact" id="scrambleFact" style="display:none;"></div>
+      <div class="quiz-next">
+        <button class="btn btn-primary" id="scrambleNextBtn" style="display:none;" onclick="nextScrambleWord()" data-i18n="next">NEXT →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/scramble.js"></script>
+<%- include('partials/footer') %>

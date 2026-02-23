@@ -1,0 +1,42 @@
+<%- include('partials/header') %>
+
+<div class="page-header">
+  <div class="section-badge">👂 LISTEN</div>
+  <h1><span class="gold" data-i18n="listeningChallenge">Listening</span> <span data-i18n="challengePage">Challenge</span></h1>
+  <p data-i18n="listeningHeader">Hear the Arabic word and pick the English meaning</p>
+</div>
+
+<div class="quiz-container">
+  <div id="listenStart" class="start-screen">
+    <h2 data-i18n="listeningTitle">Listening Challenge</h2>
+    <p data-i18n="listeningDesc">You'll hear an Arabic word spoken aloud. Pick the correct English meaning from 4 options!</p>
+    <button class="btn btn-primary btn-lg" onclick="startListening()"><span data-i18n="start">START</span> 👂</button>
+  </div>
+
+  <div id="listenArea" style="display:none;">
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="listenProgressFill"></div></div>
+      <div class="quiz-progress-text" id="listenProgressText">1/10</div>
+    </div>
+    <div class="quiz-hearts" id="listenHearts"></div>
+    <div class="quiz-score" id="listenScore">SCORE: 0</div>
+
+    <div class="quiz-card" id="listenCard">
+      <div class="listen-speaker">
+        <button class="listen-play-btn" id="listenPlayBtn" onclick="playCurrentWord()">🔊</button>
+        <p class="listen-instruction" data-i18n="tapToHear">Tap to hear the word</p>
+      </div>
+      <div class="quiz-options" id="listenOptions"></div>
+      <div class="listen-reveal" id="listenReveal" style="display:none;">
+        <span class="listen-arabic" id="listenArabic"></span>
+        <span class="listen-transliteration" id="listenTranslit"></span>
+      </div>
+      <div class="quiz-next">
+        <button class="btn btn-primary" id="listenNextBtn" style="display:none;" onclick="nextListenQuestion()" data-i18n="next">NEXT →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/listening.js"></script>
+<%- include('partials/footer') %>

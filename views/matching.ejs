@@ -1,0 +1,27 @@
+<%- include('partials/header') %>
+
+<div class="page-header">
+  <div class="section-badge">🃏 MEMORY</div>
+  <h1><span class="gold">Match</span> the Cards</h1>
+  <p>Find the matching pairs — test your memory with UAE landmarks and symbols</p>
+</div>
+
+<div class="matching-container">
+  <div id="matchStart" class="start-screen">
+    <h2>Memory Card Game</h2>
+    <p>Flip the cards and find all matching pairs. Try to do it in as few moves as possible!</p>
+    <button class="btn btn-primary btn-lg" onclick="startMatching()">START GAME 🎮</button>
+  </div>
+
+  <div id="matchArea" style="display:none;">
+    <div class="matching-stats">
+      <div class="matching-stat">MOVES: <span id="matchMoves">0</span></div>
+      <div class="matching-stat">PAIRS: <span id="matchPairs">0</span> / <span id="matchTotal">8</span></div>
+      <div class="matching-stat">TIME: <span id="matchTime">0:00</span></div>
+    </div>
+    <div class="matching-grid" id="matchingGrid"></div>
+  </div>
+</div>
+
+<script src="/js/matching.js"></script>
+<%- include('partials/footer') %>

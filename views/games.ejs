@@ -1,0 +1,135 @@
+<%- include('partials/header') %>
+
+<div class="games-hub">
+  <div class="page-header">
+    <div class="section-badge">🎮 ARCADE</div>
+    <h1><span class="gold">Games</span> Arcade</h1>
+    <p>87 real playable games — play solo or with a friend!</p>
+  </div>
+
+  <div class="games-tabs" id="gamesTabs">
+    <button class="games-tab active" data-cat="all">All (87)</button>
+    <button class="games-tab" data-cat="arcade">🕹️ Arcade</button>
+    <button class="games-tab" data-cat="board">♟️ Board</button>
+    <button class="games-tab" data-cat="word">📝 Word</button>
+    <button class="games-tab" data-cat="trivia">🧠 Trivia</button>
+    <button class="games-tab" data-cat="fun">🎉 Fun</button>
+  </div>
+
+  <div class="games-grid" id="gamesGrid"></div>
+</div>
+
+<!-- FULL-SCREEN GAME OVERLAY -->
+<div class="game-overlay" id="gameOverlay">
+  <div class="game-topbar">
+    <button class="game-back-btn" id="gameBackBtn">← Back</button>
+    <div class="game-topbar-info">
+      <span class="game-topbar-emoji" id="gameTopEmoji"></span>
+      <span class="game-topbar-name" id="gameTopName">Game</span>
+    </div>
+    <div class="game-topbar-score" id="gameTopScore">Score: 0</div>
+    <div class="game-topbar-diff" id="gameTopDiff"></div>
+  </div>
+
+  <!-- MODE SELECT SCREEN -->
+  <div class="game-mode-screen" id="gameModeScreen">
+    <div class="game-mode-card">
+      <div class="game-mode-emoji" id="gameModeEmoji">🎮</div>
+      <h2 class="game-mode-title" id="gameModeTitle">Game Name</h2>
+      <div class="game-mode-section">
+        <div class="game-mode-label">Choose Mode</div>
+        <div class="game-mode-options">
+          <button class="game-mode-opt active" id="gameModeBot" data-mode="1p">
+            <span class="game-mode-opt-icon">🤖</span>
+            <span class="game-mode-opt-text">vs Rashid</span>
+          </button>
+          <button class="game-mode-opt" id="gameMode2P" data-mode="2p" style="display:none">
+            <span class="game-mode-opt-icon">👥</span>
+            <span class="game-mode-opt-text">2 Players</span>
+          </button>
+        </div>
+      </div>
+      <div class="game-mode-section" id="gameDiffSection">
+        <div class="game-mode-label">Bot Difficulty</div>
+        <div class="game-mode-options">
+          <button class="game-mode-diff" data-diff="easy">😊 Easy</button>
+          <button class="game-mode-diff active" data-diff="medium">🙂 Medium</button>
+          <button class="game-mode-diff" data-diff="hard">😈 Hard</button>
+        </div>
+      </div>
+      <button class="gbtn gbtn-gold game-mode-play" id="gameModePlay">▶ PLAY!</button>
+    </div>
+    <!-- Rashid on mode screen -->
+    <div class="game-mode-rashid">
+      <svg viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+        <g transform="translate(100,150)">
+          <path d="M-40,-75 Q-45,-95 -30,-105 Q0,-115 30,-105 Q45,-95 40,-75 L45,-30 Q45,-15 35,-5 L35,15 Q30,25 20,20 L-20,20 Q-30,25 -35,15 L-35,-5 Q-45,-15 -45,-30 Z" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.8"/>
+          <ellipse cx="0" cy="-92" rx="28" ry="5" fill="#1A1A1A"/>
+          <ellipse cx="0" cy="-58" rx="33" ry="37" fill="#F4C99B"/>
+          <g>
+            <ellipse cx="-12" cy="-60" rx="10" ry="11.5" fill="#FFFFFF"/>
+            <circle cx="-11" cy="-59" r="7" fill="#2C1810"/>
+            <circle cx="-9" cy="-63" r="3" fill="#FFFFFF"/>
+            <ellipse cx="12" cy="-60" rx="10" ry="11.5" fill="#FFFFFF"/>
+            <circle cx="13" cy="-59" r="7" fill="#2C1810"/>
+            <circle cx="15" cy="-63" r="3" fill="#FFFFFF"/>
+          </g>
+          <path d="M-10,-40 Q0,-30 10,-40" fill="none" stroke="#8B4513" stroke-width="2.2" stroke-linecap="round"/>
+          <path d="M-28,-22 Q-30,-15 -35,30 L-38,85 Q-35,95 0,100 Q35,95 38,85 L35,30 Q30,-15 28,-22 Z" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.8"/>
+        </g>
+      </svg>
+      <div class="game-mode-rashid-speech" id="gameModeRashidSpeech">Pick a mode and let's play! 🎮</div>
+    </div>
+  </div>
+
+  <!-- GAME BODY (with Rashid inside) -->
+  <div class="game-body" id="gameBody" style="display:none">
+    <div class="game-play-area">
+      <div class="game-stage" id="gameStage"></div>
+      <!-- Rashid inside game area at bottom -->
+      <div class="game-rashid-inline" id="gameRashidInline">
+        <div class="game-rashid-inline-char">
+          <svg viewBox="0 0 100 140" xmlns="http://www.w3.org/2000/svg">
+            <g transform="translate(50,70)">
+              <path d="M-20,-35 Q-22,-47 -15,-52 Q0,-57 15,-52 Q22,-47 20,-35 L22,-12 Q22,-6 17,-2 L17,7 Q15,12 10,10 L-10,10 Q-15,12 -17,7 L-17,-2 Q-22,-6 -22,-12 Z" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.5"/>
+              <ellipse cx="0" cy="-45" rx="14" ry="2.5" fill="#1A1A1A"/>
+              <ellipse cx="0" cy="-28" rx="16" ry="18" fill="#F4C99B"/>
+              <circle cx="-6" cy="-30" r="3.5" fill="#2C1810"/><circle cx="-5" cy="-31.5" r="1.2" fill="#FFF"/>
+              <circle cx="6" cy="-30" r="3.5" fill="#2C1810"/><circle cx="7" cy="-31.5" r="1.2" fill="#FFF"/>
+              <path d="M-5,-20 Q0,-15 5,-20" fill="none" stroke="#8B4513" stroke-width="1.2" stroke-linecap="round"/>
+              <path d="M-14,-10 Q-15,-5 -17,15 L-19,42 Q-17,47 0,50 Q17,47 19,42 L17,15 Q15,-5 14,-10 Z" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.5"/>
+            </g>
+          </svg>
+        </div>
+        <div class="game-rashid-bubble" id="gameRashidBubble">Let's play! 🎮</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Over Screen -->
+  <div class="game-over-screen" id="gameOverScreen" style="display:none">
+    <div class="game-over-card">
+      <div class="game-over-emoji" id="gameOverEmoji">🎉</div>
+      <h2 class="game-over-title" id="gameOverTitle">Game Over!</h2>
+      <div class="game-over-score" id="gameOverScore">Score: 0</div>
+      <div class="game-over-stars" id="gameOverStars"></div>
+      <div class="game-over-xp" id="gameOverXP">+0 XP</div>
+      <div class="game-over-btns">
+        <button class="btn btn-primary" id="gameOverReplay">Play Again 🔄</button>
+        <button class="btn btn-outline" id="gameOverBack">Back to Games</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<link rel="stylesheet" href="/css/games.css">
+<script src="/js/games-engine.js"></script>
+<script src="/js/games-arcade.js"></script>
+<script src="/js/games-board.js"></script>
+<script src="/js/games-word.js"></script>
+<script src="/js/games-trivia.js"></script>
+<script src="/js/games-fun.js"></script>
+<script src="/js/games-extra1.js"></script>
+<script src="/js/games-extra2.js"></script>
+<script src="/js/games-extra3.js"></script>
+<%- include('partials/footer') %>

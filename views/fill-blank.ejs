@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<div class="page-header">
+  <div class="section-badge">📝 FILL IN THE BLANK</div>
+  <h1><span class="gold" data-i18n="completeThe">Complete</span> <span data-i18n="sentencePage">the Sentence</span></h1>
+  <p data-i18n="fillBlankHeader">Choose the right word to complete each sentence about UAE culture</p>
+</div>
+
+<div class="quiz-container">
+  <div id="fillStart" class="start-screen">
+    <h2 data-i18n="fillBlankTitle">Fill in the Blank</h2>
+    <p data-i18n="fillBlankDesc">Read each sentence and pick the correct word from the choices below. 10 sentences to complete!</p>
+    <button class="btn btn-primary btn-lg" onclick="startFillBlank()"><span data-i18n="start">START</span> 📝</button>
+  </div>
+
+  <div id="fillArea" style="display:none;">
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="fillProgressFill"></div></div>
+      <div class="quiz-progress-text" id="fillProgressText">1/10</div>
+    </div>
+    <div class="quiz-hearts" id="fillHearts"></div>
+    <div class="quiz-score" id="fillScore">SCORE: 0</div>
+
+    <div class="quiz-card" id="fillCard">
+      <div class="fill-sentence" id="fillSentence"></div>
+      <div class="fill-hint" id="fillHint" style="display:none;"></div>
+      <div class="fill-wordbank" id="fillWordBank"></div>
+      <div class="quiz-fact" id="fillFact" style="display:none;"></div>
+      <div class="quiz-next">
+        <button class="btn btn-primary" id="fillNextBtn" style="display:none;" onclick="nextFillQuestion()" data-i18n="next">NEXT →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/fill-blank.js"></script>
+<%- include('partials/footer') %>

@@ -1,0 +1,75 @@
+<%- include('partials/header') %>
+
+<div class="page-header">
+  <div class="section-badge">🦅 DISCOVER</div>
+  <h1><span class="gold" data-i18n="uaeTraditions">UAE</span> <span data-i18n="traditionsPage">Traditions</span></h1>
+  <p>Discover the rich cultural traditions passed down for generations</p>
+</div>
+
+<div class="page-voice-bar">
+  <button class="voice-btn" data-text="Welcome to UAE Traditions! Discover the amazing cultural traditions that have been passed down for generations. From falconry to pearl diving, these traditions make the UAE special. Read each one, then take the quiz at the end!" onclick="toggleVoiceBtn(this)">🔊 Listen</button>
+</div>
+
+<div class="content-grid">
+  <% traditions.forEach((tradition, i) => { %>
+    <div class="content-card" style="animation-delay: <%= i * 0.1 %>s">
+      <div class="content-card-header">
+        <div class="content-card-emoji"><%= tradition.emoji %></div>
+        <div>
+          <div class="content-card-title"><%= tradition.name %></div>
+          <div class="content-card-arabic"><%= tradition.nameAr %></div>
+        </div>
+      </div>
+      <div class="content-card-body"><%= tradition.description %></div>
+      <button class="voice-btn" style="margin-top:12px" data-text="<%= tradition.name %>. <%= tradition.description %>" onclick="toggleVoiceBtn(this)">🔊 Listen</button>
+    </div>
+  <% }) %>
+</div>
+
+<!-- SECTION QUIZ: What Did You Learn? -->
+<div class="section-quiz-header">
+  <div class="section-badge">🧠 QUIZ TIME</div>
+  <h2 class="section-title" style="text-align:center;">What Did You <span class="gold" style="background:linear-gradient(135deg,#FFD700,#FF6B35);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">Learn</span>?</h2>
+  <p class="section-subtitle" style="text-align:center; margin:0 auto;">Let's see if you remember what we just taught you about UAE traditions!</p>
+</div>
+
+<div class="section-quiz">
+  <div id="sectionQuizStart" class="start-screen">
+    <h2>Ready to Test Your Knowledge?</h2>
+    <p>Answer 5 questions about the traditions you just read about. Earn up to 3 stars!</p>
+    <button class="btn btn-primary btn-lg" onclick="startSectionQuiz('traditions')">START QUIZ 🦅</button>
+  </div>
+
+  <div id="sectionQuizArea" style="display:none;">
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar">
+        <div class="quiz-progress-fill" id="sqProgressFill"></div>
+      </div>
+      <div class="quiz-progress-text" id="sqProgressText">1/5</div>
+    </div>
+
+    <div class="quiz-score" id="sqScore">SCORE: 0</div>
+
+    <div class="quiz-card" id="sqCard">
+      <div class="quiz-question" id="sqQuestion">Loading...</div>
+      <div class="quiz-options" id="sqOptions"></div>
+      <div class="quiz-fact" id="sqFact" style="display:none;"></div>
+      <div class="quiz-next">
+        <button class="btn btn-primary" id="sqNextBtn" style="display:none;" onclick="nextSectionQuestion()">NEXT →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cta-section">
+  <a href="/food" class="btn btn-primary btn-lg">NEXT: TRADITIONAL FOOD 🍛</a>
+</div>
+
+<script src="/js/section-quiz.js"></script>
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    resetHearts();
+    markNodeComplete('traditions');
+  });
+</script>
+<%- include('partials/footer') %>

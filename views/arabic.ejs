@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<div class="page-header">
+  <div class="section-badge">📖 LEARN</div>
+  <h1><span class="gold">Learn</span> Arabic Words</h1>
+  <p>Click on the cards to learn common Arabic words, then test yourself with the memory game</p>
+</div>
+
+<div class="arabic-container">
+  <div class="arabic-grid">
+    <% words.forEach((word, i) => { %>
+      <div class="arabic-card" onclick="revealArabic(this)" style="animation-delay: <%= i * 0.05 %>s">
+        <div class="arabic-emoji"><%= word.emoji %></div>
+        <div class="arabic-word"><%= word.word %></div>
+        <div class="arabic-transliteration"><%= word.transliteration %></div>
+        <div class="arabic-meaning"><%= word.meaning %></div>
+        <span class="click-hint">Click to highlight</span>
+      </div>
+    <% }) %>
+  </div>
+
+  <div style="text-align:center; margin-top:48px;">
+    <div class="section-badge">🧠 CHALLENGE</div>
+    <h2 class="section-title">Arabic Memory Game</h2>
+    <p class="section-subtitle" style="margin: 0 auto 24px;">Match the Arabic word with its English meaning!</p>
+    <button class="btn btn-primary btn-lg" onclick="startArabicMemory()" id="arabicStartBtn">START MEMORY GAME 🧠</button>
+  </div>
+
+  <div class="matching-stats" id="arabicStats" style="display:none;">
+    <div class="matching-stat">MOVES: <span id="arabicMoves">0</span></div>
+    <div class="matching-stat">PAIRS: <span id="arabicPairs">0</span> / 8</div>
+  </div>
+
+  <div class="arabic-memory-grid" id="arabicMemoryGrid"></div>
+</div>
+
+<script src="/js/arabic.js"></script>
+<%- include('partials/footer') %>

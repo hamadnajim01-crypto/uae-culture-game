@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFD700">
+  <title><%= title %> — UAE Culture Learning Kids</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/mascot.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Inter:wght@300;400;500;600;700;800&family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="/js/progression.js"></script>
+  <script src="/js/voice-picker.js"></script>
+  <script src="/js/i18n.js"></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" title="Switch Language">
+        <span class="lang-flag">🇦🇪</span><span class="lang-label">عربي</span>
+      </button>
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-icon">🇦🇪</span>
+        <span data-i18n="uaeCulture">UAE CULTURE</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link" data-i18n="home">HOME</a>
+        <a href="/landmarks" class="nav-link" data-i18n="landmarks">LANDMARKS</a>
+        <a href="/traditions" class="nav-link" data-i18n="traditions">TRADITIONS</a>
+        <a href="/food" class="nav-link" data-i18n="food">FOOD</a>
+        <a href="/arabic" class="nav-link" data-i18n="arabic">ARABIC</a>
+        <a href="/games" class="nav-link" data-i18n="gamesArcade">GAMES</a>
+        <a href="/quiz" class="nav-link" data-i18n="quiz">QUIZ</a>
+        <a href="/matching" class="nav-link" data-i18n="match">MATCH</a>
+        <a href="/timeline" class="nav-link" data-i18n="timeline">TIMELINE</a>
+      </div>
+      <div class="nav-progress-area">
+        <div class="nav-streak" id="navStreak" title="Daily Streak">
+          <span class="streak-flame">🔥</span>
+          <span class="streak-count" id="streakCount">0</span>
+        </div>
+        <div class="nav-hearts" id="navHearts">
+          <span id="heartsDisplay">❤️❤️❤️❤️❤️</span>
+        </div>
+        <div class="nav-xp" id="navXP">
+          <div class="nav-level-badge" id="navLevelBadge">🧭 Explorer</div>
+          <div class="nav-xp-bar">
+            <div class="nav-xp-fill" id="navXPFill" style="width:0%"></div>
+          </div>
+          <div class="nav-xp-text" id="navXPText">0 XP</div>
+        </div>
+        <button class="nav-sound-btn" id="soundToggle" onclick="toggleMusic()" title="Toggle Music"><span id="soundIcon">🔇</span></button>
+        <button class="nav-settings-btn" id="voiceSettingsBtn" onclick="toggleVoicePanel()" title="Voice Settings">⚙️</button>
+      </div>
+      <button class="nav-burger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+  <main class="main-content">

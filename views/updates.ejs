@@ -1,0 +1,623 @@
+<%- include('partials/header') %>
+
+<style>
+.updates-page {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px 20px 60px;
+}
+.updates-header {
+  text-align: center;
+  margin-bottom: 40px;
+}
+.updates-header h1 {
+  font-family: Orbitron, sans-serif;
+  font-size: 32px;
+  background: linear-gradient(135deg, #FFD700, #FF6B35);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin-bottom: 8px;
+}
+.updates-header p {
+  color: rgba(255,255,255,0.6);
+  font-size: 15px;
+}
+
+/* Timeline */
+.updates-timeline {
+  position: relative;
+  padding-left: 40px;
+}
+.updates-timeline::before {
+  content: '';
+  position: absolute;
+  left: 16px;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, #FFD700, #00C9A7, #845EC2, #FF6B35);
+  border-radius: 3px;
+}
+
+/* Version block */
+.update-block {
+  position: relative;
+  margin-bottom: 40px;
+  animation: fadeSlideIn 0.6s ease-out both;
+}
+.update-block:nth-child(1) { animation-delay: 0.1s; }
+.update-block:nth-child(2) { animation-delay: 0.2s; }
+.update-block:nth-child(3) { animation-delay: 0.3s; }
+.update-block:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes fadeSlideIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Dot on timeline */
+.update-dot {
+  position: absolute;
+  left: -32px;
+  top: 8px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 3px solid;
+  background: #1a0a2e;
+  z-index: 1;
+}
+.update-block.latest .update-dot {
+  border-color: #FFD700;
+  background: #FFD700;
+  box-shadow: 0 0 12px rgba(255,215,0,0.6);
+}
+.update-block:nth-child(2) .update-dot { border-color: #00C9A7; }
+.update-block:nth-child(3) .update-dot { border-color: #845EC2; }
+.update-block:nth-child(4) .update-dot { border-color: #FF6B35; }
+
+/* Version card */
+.update-card {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02));
+  border: 1px solid rgba(255,255,255,0.1);
+  border-radius: 16px;
+  padding: 24px;
+  backdrop-filter: blur(10px);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.update-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.3);
+}
+.update-block.latest .update-card {
+  border-color: rgba(255,215,0,0.3);
+  box-shadow: 0 4px 20px rgba(255,215,0,0.1);
+}
+
+/* Version header */
+.update-version-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 6px;
+  flex-wrap: wrap;
+}
+.update-version {
+  font-family: Orbitron, sans-serif;
+  font-size: 22px;
+  font-weight: 700;
+  color: #FFD700;
+}
+.update-badge {
+  display: inline-block;
+  font-size: 10px;
+  font-weight: 700;
+  padding: 3px 10px;
+  border-radius: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+.badge-latest {
+  background: linear-gradient(135deg, #FF6B35, #FFD700);
+  color: #1a0a2e;
+}
+.badge-major {
+  background: linear-gradient(135deg, #00C9A7, #00E5FF);
+  color: #1a0a2e;
+}
+.badge-update {
+  background: linear-gradient(135deg, #845EC2, #B39CD0);
+  color: #fff;
+}
+.badge-launch {
+  background: linear-gradient(135deg, #FF6B35, #FF9671);
+  color: #1a0a2e;
+}
+
+.update-title {
+  font-family: Orbitron, sans-serif;
+  font-size: 16px;
+  color: #fff;
+  margin-bottom: 4px;
+}
+.update-date {
+  font-size: 12px;
+  color: rgba(255,255,255,0.4);
+  margin-bottom: 16px;
+}
+
+/* Feature list */
+.update-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.update-features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  margin-bottom: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.8);
+}
+.update-features li .uf-emoji {
+  font-size: 18px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.update-features li strong {
+  color: #FFD700;
+}
+
+/* Stats row */
+.update-stats {
+  display: flex;
+  gap: 12px;
+  margin-top: 16px;
+  flex-wrap: wrap;
+}
+.update-stat {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 10px;
+  padding: 10px 14px;
+  text-align: center;
+  flex: 1;
+  min-width: 80px;
+}
+.update-stat-value {
+  font-family: Orbitron, sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  color: #FFD700;
+}
+.update-stat-label {
+  font-size: 10px;
+  color: rgba(255,255,255,0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 2px;
+}
+
+/* Screenshots placeholder */
+.update-screenshots {
+  display: flex;
+  gap: 8px;
+  margin-top: 14px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.update-screenshot {
+  width: 100px;
+  height: 70px;
+  border-radius: 8px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  border: 1px solid rgba(255,255,255,0.1);
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+  .updates-page { padding: 20px 12px 40px; }
+  .updates-timeline { padding-left: 30px; }
+  .updates-timeline::before { left: 12px; }
+  .update-dot { left: -26px; width: 16px; height: 16px; }
+  .update-card { padding: 16px; }
+  .update-version { font-size: 18px; }
+  .update-stats { gap: 8px; }
+  .update-stat { padding: 8px 10px; }
+  .update-stat-value { font-size: 16px; }
+  .updates-header h1 { font-size: 24px; }
+}
+</style>
+
+<div class="updates-page">
+
+  <div class="updates-header">
+    <h1>Update Log</h1>
+    <p>Everything we've added and improved — from day one to today!</p>
+  </div>
+
+  <div class="updates-timeline">
+
+    <!-- v5.1 — Latest -->
+    <div class="update-block latest">
+      <div class="update-dot"></div>
+      <div class="update-card">
+        <div class="update-version-row">
+          <span class="update-version">v5.1</span>
+          <span class="update-badge badge-latest">LATEST</span>
+        </div>
+        <div class="update-title">Multiplayer Expansion</div>
+        <div class="update-date">February 2026</div>
+
+        <ul class="update-features">
+          <li>
+            <span class="uf-emoji">👥</span>
+            <span><strong>11 New 2-Player Games!</strong> — Battleship, Trivia Blitz, Speed Math, Odd One Out, Emoji Guess, Word Chain, Arabic Numbers, Memory Chain, Category Blast, Would You Rather, and Ingredient Match now all support local 2P!</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🚢</span>
+            <span><strong>Battleship 2P Mode</strong> — Full two-ocean grid Battleship! Each player has hidden landmarks, take turns attacking each other's fleet. First to sink all wins!</span>
+          </li>
+          <li>
+            <span class="uf-emoji">⚡</span>
+            <span><strong>2P Trivia Buzzer Games</strong> — Trivia Blitz, Speed Math, and Odd One Out now have split-screen P1 vs P2 buzzer modes. Race to answer first!</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🔗</span>
+            <span><strong>2P Word Challenges</strong> — Emoji Guess and Arabic Numbers have P1/P2 split buttons. Word Chain has alternating turns with timer pressure!</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🎉</span>
+            <span><strong>2P Fun Games</strong> — Memory Chain turns into a competitive memory battle, Would You Rather becomes a matching game, Category Blast and Ingredient Match are head-to-head races!</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🎨</span>
+            <span><strong>Player Color Coding</strong> — P1 in teal, P2 in coral. Every 2P game has clear turn indicators, split scoring, and winner announcements</span>
+          </li>
+        </ul>
+
+        <div class="update-stats">
+          <div class="update-stat">
+            <div class="update-stat-value">22</div>
+            <div class="update-stat-label">2P Games</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">+11</div>
+            <div class="update-stat-label">New 2P</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">87</div>
+            <div class="update-stat-label">Total Games</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v5.0 -->
+    <div class="update-block">
+      <div class="update-dot"></div>
+      <div class="update-card">
+        <div class="update-version-row">
+          <span class="update-version">v5.0</span>
+          <span class="update-badge badge-major">MAJOR</span>
+        </div>
+        <div class="update-title">87 Games Mega Expansion</div>
+        <div class="update-date">February 2026</div>
+
+        <ul class="update-features">
+          <li>
+            <span class="uf-emoji">🎮</span>
+            <span><strong>37 Brand New Games!</strong> — All of Rashid's chat mini-games converted into real visual playable games with full graphics and animations</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🔤</span>
+            <span><strong>Wordle UAE Edition</strong> — Secret Word game with color-coded tiles, flip animations, and on-screen keyboard. Guess 5-letter UAE words!</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🧠</span>
+            <span><strong>13 New Trivia Games</strong> — Trivia Blitz with timer bars, 20 Questions with hint cards, Higher or Lower comparison cards, Year Guesser with timeline slider, Odd One Out, Two Truths One Lie, Speed Math with keypad</span>
+          </li>
+          <li>
+            <span class="uf-emoji">📝</span>
+            <span><strong>12 New Word Games</strong> — Word Chain with connected bubbles, Riddle Me on scroll cards, Emoji Guess, Emoji Art, Arabic Numbers, Arabic Greetings, Story Builder, Poetry Builder</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🎉</span>
+            <span><strong>12 New Fun Games</strong> — Memory Chain, Fortune Teller with crystal ball, Would You Rather, Treasure Hunt on 5x5 grid, Animal Safari, Geography Bingo, Category Blast, Ingredient Match</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🗺️</span>
+            <span><strong>Geography & Culture</strong> — Island Explorer, Dress Up Quiz, UAE Bucket List, Transport Quiz, Festival Quiz, Emirates Quiz, Architecture Quiz, Ruler Match, Cultural Etiquette</span>
+          </li>
+        </ul>
+
+        <div class="update-stats">
+          <div class="update-stat">
+            <div class="update-stat-value">87</div>
+            <div class="update-stat-label">Total Games</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">+37</div>
+            <div class="update-stat-label">New Games</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">5</div>
+            <div class="update-stat-label">Categories</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v4.0 -->
+    <div class="update-block">
+      <div class="update-dot"></div>
+      <div class="update-card">
+        <div class="update-version-row">
+          <span class="update-version">v4.0</span>
+          <span class="update-badge badge-major">MAJOR</span>
+        </div>
+        <div class="update-title">HD Graphics Overhaul</div>
+        <div class="update-date">February 2026</div>
+
+        <ul class="update-features">
+          <li>
+            <span class="uf-emoji">🎨</span>
+            <span><strong>All 50 games rebuilt</strong> with professional-grade visuals — gradient backgrounds, particle effects, glow/shadow FX, and smooth animations on every game</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🐍</span>
+            <span><strong>Arcade Games Overhauled</strong> — Desert Snake with glowing trails, Flappy Falcon with sunset parallax skies, Brick Breaker with ball afterimages, Pearl Diver with underwater light rays, Space Falcon with exhaust flames</span>
+          </li>
+          <li>
+            <span class="uf-emoji">♟️</span>
+            <span><strong>Board Games Enhanced</strong> — Tic-Tac-Toe with neon cell glow, Connect Four with drop animations, Memory Cards with 3D flip effects, Pong with 12-frame ball trail, Tower Stack with height meter</span>
+          </li>
+          <li>
+            <span class="uf-emoji">📝</span>
+            <span><strong>Word Games Redesigned</strong> — Word Search with hover highlights, Hangman with canvas gallows drawing, Crossword with numbered auto-advance cells, Typing Race with live WPM meter and race track</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🧠</span>
+            <span><strong>Trivia Games Polished</strong> — Map Puzzle with animated pin drops, Timeline Sort with gradient connector lines, Capital Match with per-emirate colors, Number Guess with thermometer distance bar</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🎉</span>
+            <span><strong>Fun Games Upgraded</strong> — Lucky Wheel with radial glow and wobbling pointer, Dice Adventure with 8-frame animated rolls, Drawing Guess with artistic canvas border, Simon Says with pulse feedback</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🤖</span>
+            <span><strong>Difficulty System</strong> — Choose Easy, Medium, or Hard for every game. AI opponents adjust their skill level to match</span>
+          </li>
+          <li>
+            <span class="uf-emoji">📋</span>
+            <span><strong>Update Log Page</strong> — You're looking at it! Full history of all improvements</span>
+          </li>
+        </ul>
+
+        <div class="update-stats">
+          <div class="update-stat">
+            <div class="update-stat-value">50</div>
+            <div class="update-stat-label">Games Rebuilt</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">5</div>
+            <div class="update-stat-label">Categories</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">3</div>
+            <div class="update-stat-label">Difficulties</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">6</div>
+            <div class="update-stat-label">Files Rewritten</div>
+          </div>
+        </div>
+
+        <div class="update-screenshots">
+          <div class="update-screenshot" style="background:linear-gradient(135deg,#1a3a2a,#0a1a0e);">🐍</div>
+          <div class="update-screenshot" style="background:linear-gradient(135deg,#FF8C42,#FFD700);">🦅</div>
+          <div class="update-screenshot" style="background:linear-gradient(135deg,#0a2a4a,#1a4a7a);">🤿</div>
+          <div class="update-screenshot" style="background:linear-gradient(135deg,#2a1a3a,#4a2a6a);">🧩</div>
+          <div class="update-screenshot" style="background:linear-gradient(135deg,#1a3a3a,#0a2a2a);">🔍</div>
+          <div class="update-screenshot" style="background:linear-gradient(135deg,#3a1a2a,#6a2a4a);">🎡</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v3.0 -->
+    <div class="update-block">
+      <div class="update-dot"></div>
+      <div class="update-card">
+        <div class="update-version-row">
+          <span class="update-version">v3.0</span>
+          <span class="update-badge badge-major">MAJOR</span>
+        </div>
+        <div class="update-title">Games Arcade Launch</div>
+        <div class="update-date">February 2026</div>
+
+        <ul class="update-features">
+          <li>
+            <span class="uf-emoji">🎮</span>
+            <span><strong>50 Real Playable Games!</strong> — A brand new Games Arcade page with 50 actual visual games across 5 categories: Arcade, Board, Word, Trivia, and Fun</span>
+          </li>
+          <li>
+            <span class="uf-emoji">👥</span>
+            <span><strong>2-Player Mode</strong> — 12 games support local multiplayer! Play Pong, Tic-Tac-Toe, Connect Four, Camel Race, Typing Race, and more with a friend on the same screen</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🐪</span>
+            <span><strong>Rashid as Opponent</strong> — In single-player board and strategy games, Rashid acts as your AI opponent with smart moves and funny reactions</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🏷️</span>
+            <span><strong>Category Filtering</strong> — Browse all games or filter by category: Arcade, Board, Word, Trivia, Fun. Each game has its own card with emoji icon</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🕹️</span>
+            <span><strong>Mode Selection Screen</strong> — Choose 1-Player vs Bot or 2-Player before each game starts. Clean and easy to use</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🔗</span>
+            <span><strong>GAMES Nav Link</strong> — Access the Games Arcade from the top navigation bar anytime</span>
+          </li>
+        </ul>
+
+        <div class="update-stats">
+          <div class="update-stat">
+            <div class="update-stat-value">50</div>
+            <div class="update-stat-label">New Games</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">12</div>
+            <div class="update-stat-label">2P Games</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">5</div>
+            <div class="update-stat-label">Categories</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v2.0 -->
+    <div class="update-block">
+      <div class="update-dot"></div>
+      <div class="update-card">
+        <div class="update-version-row">
+          <span class="update-version">v2.0</span>
+          <span class="update-badge badge-update">UPDATE</span>
+        </div>
+        <div class="update-title">Rashid & Progression System</div>
+        <div class="update-date">February 2026</div>
+
+        <ul class="update-features">
+          <li>
+            <span class="uf-emoji">🐫</span>
+            <span><strong>Meet Rashid!</strong> — Your friendly camel mascot companion. Click him to chat about UAE culture, get fun facts, and play 50 chat mini-games</span>
+          </li>
+          <li>
+            <span class="uf-emoji">⭐</span>
+            <span><strong>XP & Leveling</strong> — Earn experience points from every activity. Level up from Explorer to UAE Legend with 10 ranks</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🔥</span>
+            <span><strong>Daily Streak</strong> — Come back every day to keep your streak alive. Visible in the top navigation bar</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🏅</span>
+            <span><strong>10 Badges</strong> — Unlock achievement badges for completing milestones like finishing all landmarks, getting perfect quiz scores, and more</span>
+          </li>
+          <li>
+            <span class="uf-emoji">❤️</span>
+            <span><strong>Hearts System</strong> — 5 lives that regenerate over time. Makes learning feel more like a real game</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🗺️</span>
+            <span><strong>Learning Path</strong> — Follow a structured path through 6 units. Complete each step to unlock the next</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🌐</span>
+            <span><strong>Arabic Language Support</strong> — Full RTL (right-to-left) mode with Arabic translations for the entire website</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🔊</span>
+            <span><strong>Voice & Sound</strong> — Text-to-speech for all content. Background music toggle. Voice settings panel</span>
+          </li>
+        </ul>
+
+        <div class="update-stats">
+          <div class="update-stat">
+            <div class="update-stat-value">10</div>
+            <div class="update-stat-label">Badges</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">6</div>
+            <div class="update-stat-label">Units</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">2</div>
+            <div class="update-stat-label">Languages</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- v1.0 -->
+    <div class="update-block">
+      <div class="update-dot"></div>
+      <div class="update-card">
+        <div class="update-version-row">
+          <span class="update-version">v1.0</span>
+          <span class="update-badge badge-launch">LAUNCH</span>
+        </div>
+        <div class="update-title">UAE Culture Learning Kids</div>
+        <div class="update-date">February 2026</div>
+
+        <ul class="update-features">
+          <li>
+            <span class="uf-emoji">🇦🇪</span>
+            <span><strong>Website Launch!</strong> — The first version of UAE Culture Learning Kids goes live with interactive learning pages and fun quizzes</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🏗️</span>
+            <span><strong>Landmarks Page</strong> — Learn about Burj Khalifa, Sheikh Zayed Grand Mosque, Museum of the Future, and more iconic UAE landmarks</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🦅</span>
+            <span><strong>Traditions Page</strong> — Discover falconry, pearl diving, camel racing, henna art, and other ancient UAE traditions</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🍛</span>
+            <span><strong>Food Page</strong> — Explore traditional Emirati dishes like Machboos, Luqaimat, Harees, and Balaleet</span>
+          </li>
+          <li>
+            <span class="uf-emoji">📖</span>
+            <span><strong>Arabic Words</strong> — Interactive flashcards to learn common Arabic greetings and phrases with pronunciation</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🧠</span>
+            <span><strong>8 Quiz Types</strong> — Culture Quiz, Match Cards, Fill-in-the-Blank, True/False, Word Scramble, Listening Challenge, Timeline Sort, and section quizzes</span>
+          </li>
+          <li>
+            <span class="uf-emoji">🌟</span>
+            <span><strong>Splash Intro</strong> — Beautiful 4-step onboarding experience for new visitors with name entry and progress saving</span>
+          </li>
+        </ul>
+
+        <div class="update-stats">
+          <div class="update-stat">
+            <div class="update-stat-value">8</div>
+            <div class="update-stat-label">Quiz Types</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">4</div>
+            <div class="update-stat-label">Learn Pages</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">16</div>
+            <div class="update-stat-label">Arabic Words</div>
+          </div>
+          <div class="update-stat">
+            <div class="update-stat-value">50+</div>
+            <div class="update-stat-label">Questions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- end timeline -->
+
+  <div style="text-align:center; margin-top:40px;">
+    <a href="/" class="btn btn-primary" style="margin-right:10px;">Back to Home</a>
+    <a href="/games" class="btn btn-primary" style="background:linear-gradient(135deg,#00C9A7,#00E5FF);">Play Games</a>
+  </div>
+
+</div>
+
+<%- include('partials/footer') %>
