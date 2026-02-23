@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFD700">
+  <title>Fill in the Blank — UAE Culture Learning Kids</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/mascot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <script src="/js/api-shim.js"></script>
+  <script src="/js/progression.js" defer></script>
+  <script src="/js/voice-picker.js" defer></script>
+  <script src="/js/i18n.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" title="Switch Language">
+        <span class="lang-flag">🇦🇪</span><span class="lang-label">عربي</span>
+      </button>
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-icon">🇦🇪</span>
+        <span data-i18n="uaeCulture">UAE CULTURE</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link" data-i18n="home">HOME</a>
+        <a href="/landmarks" class="nav-link" data-i18n="landmarks">LANDMARKS</a>
+        <a href="/traditions" class="nav-link" data-i18n="traditions">TRADITIONS</a>
+        <a href="/food" class="nav-link" data-i18n="food">FOOD</a>
+        <a href="/arabic" class="nav-link" data-i18n="arabic">ARABIC</a>
+        <a href="/games" class="nav-link" data-i18n="gamesArcade">GAMES</a>
+        <a href="/quiz" class="nav-link" data-i18n="quiz">QUIZ</a>
+        <a href="/matching" class="nav-link" data-i18n="match">MATCH</a>
+        <a href="/timeline" class="nav-link" data-i18n="timeline">TIMELINE</a>
+      </div>
+      <div class="nav-progress-area">
+        <div class="nav-streak" id="navStreak" title="Daily Streak">
+          <span class="streak-flame">🔥</span>
+          <span class="streak-count" id="streakCount">0</span>
+        </div>
+        <div class="nav-hearts" id="navHearts">
+          <span id="heartsDisplay">❤️❤️❤️❤️❤️</span>
+        </div>
+        <div class="nav-xp" id="navXP">
+          <div class="nav-level-badge" id="navLevelBadge">🧭 Explorer</div>
+          <div class="nav-xp-bar">
+            <div class="nav-xp-fill" id="navXPFill" style="width:0%"></div>
+          </div>
+          <div class="nav-xp-text" id="navXPText">0 XP</div>
+        </div>
+        <button class="nav-sound-btn" id="soundToggle" onclick="toggleMusic()" title="Toggle Music"><span id="soundIcon">🔇</span></button>
+        <button class="nav-settings-btn" id="voiceSettingsBtn" onclick="toggleVoicePanel()" title="Voice Settings">⚙️</button>
+      </div>
+      <button class="nav-burger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+  <main class="main-content">
+
+
+<div class="page-header">
+  <div class="section-badge">📝 FILL IN THE BLANK</div>
+  <h1><span class="gold" data-i18n="completeThe">Complete</span> <span data-i18n="sentencePage">the Sentence</span></h1>
+  <p data-i18n="fillBlankHeader">Choose the right word to complete each sentence about UAE culture</p>
+</div>
+
+<div class="quiz-container">
+  <div id="fillStart" class="start-screen">
+    <h2 data-i18n="fillBlankTitle">Fill in the Blank</h2>
+    <p data-i18n="fillBlankDesc">Read each sentence and pick the correct word from the choices below. 10 sentences to complete!</p>
+    <button class="btn btn-primary btn-lg" onclick="startFillBlank()"><span data-i18n="start">START</span> 📝</button>
+  </div>
+
+  <div id="fillArea" style="display:none;">
+    <div class="quiz-progress">
+      <div class="quiz-progress-bar"><div class="quiz-progress-fill" id="fillProgressFill"></div></div>
+      <div class="quiz-progress-text" id="fillProgressText">1/10</div>
+    </div>
+    <div class="quiz-hearts" id="fillHearts"></div>
+    <div class="quiz-score" id="fillScore">SCORE: 0</div>
+
+    <div class="quiz-card" id="fillCard">
+      <div class="fill-sentence" id="fillSentence"></div>
+      <div class="fill-hint" id="fillHint" style="display:none;"></div>
+      <div class="fill-wordbank" id="fillWordBank"></div>
+      <div class="quiz-fact" id="fillFact" style="display:none;"></div>
+      <div class="quiz-next">
+        <button class="btn btn-primary" id="fillNextBtn" style="display:none;" onclick="nextFillQuestion()" data-i18n="next">NEXT →</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script src="/js/fill-blank.js"></script>
+  </main>
+  <!-- ===== RASHID — Emirati Mascot Character v3 (Persistent Chat) ===== -->
+<div class="mascot-container mascot-idle" id="mascotContainer">
+
+  <!-- PERSISTENT CHAT PANEL -->
+  <div class="rashid-chat-panel" id="rashidChatPanel">
+    <div class="rashid-chat-header">
+      <span class="rashid-chat-name">RASHID</span>
+      <div class="rashid-chat-header-actions">
+        <button class="rashid-chat-games-btn" id="rashidGamesMenuBtn" title="Mini-Games">🎮</button>
+        <button class="rashid-chat-close" id="rashidChatClose">&times;</button>
+      </div>
+    </div>
+    <div class="rashid-happiness-bar">
+      <div class="rashid-happiness-fill" id="rashidHappinessFill" style="width:0%"></div>
+      <span class="rashid-happiness-label" id="rashidHappinessLabel">🙂</span>
+    </div>
+    <div class="rashid-chat-messages" id="rashidChatMessages"></div>
+    <div class="rashid-games-menu" id="rashidGamesMenu" style="display:none;">
+      <div class="rashid-games-menu-title">🎮 Chat Games</div>
+      <div class="rashid-games-menu-grid" id="rashidGamesMenuGrid"></div>
+      <button class="rashid-games-menu-back" id="rashidGamesMenuBack">Back to Chat</button>
+    </div>
+    <div class="rashid-chat-input-area" id="rashidChatInputArea">
+      <input type="text" id="rashidChatField" placeholder="Ask me anything..." autocomplete="off" maxlength="200"/>
+      <button id="rashidChatSend">&#10148;</button>
+    </div>
+  </div>
+
+  <!-- Floating hearts on hover -->
+  <div class="mascot-hearts" id="mascotHearts"></div>
+
+  <!-- Character SVG -->
+  <div class="mascot-character" id="mascotCharacter">
+    <svg id="mascotSvg" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sparkleGlow">
+          <stop offset="0%" stop-color="#FFD700" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g id="mascotBody" transform="translate(100,150)">
+        <g id="mascotSparkles" opacity="0.8">
+          <polygon points="48,-85 50,-80 55,-82 51,-78 54,-73 49,-76 47,-71 47,-76 42,-74 46,-78 43,-82" fill="#FFD700" opacity="0.7">
+            <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/>
+          </polygon>
+          <polygon points="-52,-70 -50,-65 -45,-67 -49,-63 -46,-58 -51,-61 -53,-56 -53,-61 -58,-59 -54,-63 -57,-67" fill="#FFD700" opacity="0.5">
+            <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.5s" repeatCount="indefinite"/>
+          </polygon>
+          <circle cx="55" cy="-50" r="2" fill="#FFD700" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;0;0.6" dur="1.8s" repeatCount="indefinite"/>
+            <animate attributeName="r" values="2;3;2" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="-58" cy="-40" r="1.5" fill="#FFD700" opacity="0.4">
+            <animate attributeName="opacity" values="0.4;0;0.4" dur="2.2s" repeatCount="indefinite"/>
+            <animate attributeName="r" values="1.5;2.5;1.5" dur="2.2s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <path id="mascotGhutrah" d="M-40,-75 Q-45,-95 -30,-105 Q0,-115 30,-105 Q45,-95 40,-75 L45,-30 Q45,-15 35,-5 L35,15 Q30,25 20,20 L-20,20 Q-30,25 -35,15 L-35,-5 Q-45,-15 -45,-30 Z" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.8"/>
+        <path d="M-35,-5 Q-42,20 -38,45 Q-35,55 -28,50" fill="#FFFFFF" stroke="#E8E8E8" stroke-width="0.5" opacity="0.9"/>
+        <path d="M35,-5 Q42,20 38,45 Q35,55 28,50" fill="#FFFFFF" stroke="#E8E8E8" stroke-width="0.5" opacity="0.9"/>
+        <ellipse id="mascotAgal" cx="0" cy="-92" rx="28" ry="5" fill="#1A1A1A"/>
+        <ellipse cx="0" cy="-89" rx="26" ry="4.5" fill="#2A2A2A"/>
+        <ellipse id="mascotFace" cx="0" cy="-58" rx="33" ry="37" fill="#F4C99B"/>
+        <ellipse cx="-21" cy="-45" rx="9" ry="6" fill="#F7A8A8" opacity="0.45"/>
+        <ellipse cx="21" cy="-45" rx="9" ry="6" fill="#F7A8A8" opacity="0.45"/>
+        <g id="mascotEyes">
+          <ellipse cx="-12" cy="-60" rx="10" ry="11.5" fill="#FFFFFF"/>
+          <circle cx="-11" cy="-59" r="7" fill="#2C1810"/>
+          <circle cx="-9" cy="-63" r="3" fill="#FFFFFF"/>
+          <circle cx="-13" cy="-57" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+          <circle cx="-7" cy="-61" r="1" fill="#FFFFFF" opacity="0.3"/>
+          <ellipse cx="12" cy="-60" rx="10" ry="11.5" fill="#FFFFFF"/>
+          <circle cx="13" cy="-59" r="7" fill="#2C1810"/>
+          <circle cx="15" cy="-63" r="3" fill="#FFFFFF"/>
+          <circle cx="11" cy="-57" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+          <circle cx="17" cy="-61" r="1" fill="#FFFFFF" opacity="0.3"/>
+        </g>
+        <g id="mascotBlink">
+          <ellipse cx="-12" cy="-60" rx="10.5" ry="0" fill="#F4C99B">
+            <animate attributeName="ry" values="0;11.5;0" dur="4s" keyTimes="0;0.04;0.08" repeatCount="indefinite" begin="2s"/>
+          </ellipse>
+          <ellipse cx="12" cy="-60" rx="10.5" ry="0" fill="#F4C99B">
+            <animate attributeName="ry" values="0;11.5;0" dur="4s" keyTimes="0;0.04;0.08" repeatCount="indefinite" begin="2s"/>
+          </ellipse>
+        </g>
+        <g id="mascotBrows">
+          <path d="M-21,-74 Q-12,-80 -3,-74" fill="none" stroke="#5C3A1E" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3,-74 Q12,-80 21,-74" fill="none" stroke="#5C3A1E" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <ellipse cx="0" cy="-50" rx="2.5" ry="2" fill="#E8A878"/>
+        <g id="mascotMouth">
+          <path id="mascotSmile" d="M-10,-40 Q0,-30 10,-40" fill="none" stroke="#8B4513" stroke-width="2.2" stroke-linecap="round"/>
+          <ellipse id="mascotMouthOpen" cx="0" cy="-38" rx="7" ry="5" fill="#8B4513" style="display:none"/>
+        </g>
+        <path id="mascotKandura" d="M-28,-22 Q-30,-15 -35,30 L-38,85 Q-35,95 0,100 Q35,95 38,85 L35,30 Q30,-15 28,-22 Z" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.8"/>
+        <path d="M-12,-22 Q0,-18 12,-22" fill="none" stroke="#D4A24E" stroke-width="1" opacity="0.6"/>
+        <path d="M-10,-19 Q0,-15 10,-19" fill="none" stroke="#D4A24E" stroke-width="0.6" opacity="0.4"/>
+        <g id="mascotLeftArm" style="transform-origin: -28px -15px;">
+          <path d="M-28,-15 Q-45,10 -42,40" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round"/>
+          <path d="M-28,-15 Q-45,10 -42,40" fill="none" stroke="#E8E8E8" stroke-width="13" stroke-linecap="round" opacity="0.3"/>
+          <circle cx="-42" cy="40" r="9" fill="#F4C99B"/>
+          <circle cx="-42" cy="40" r="9" fill="#E8A878" opacity="0.2"/>
+        </g>
+        <g id="mascotRightArm" style="transform-origin: 28px -15px;">
+          <path d="M28,-15 Q45,10 42,40" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round"/>
+          <path d="M28,-15 Q45,10 42,40" fill="none" stroke="#E8E8E8" stroke-width="13" stroke-linecap="round" opacity="0.3"/>
+          <circle cx="42" cy="40" r="9" fill="#F4C99B"/>
+          <circle cx="42" cy="40" r="9" fill="#E8A878" opacity="0.2"/>
+        </g>
+        <ellipse cx="-12" cy="96" rx="12" ry="5" fill="#C4935A"/>
+        <ellipse cx="12" cy="96" rx="12" ry="5" fill="#C4935A"/>
+        <ellipse cx="-12" cy="95" rx="10" ry="3" fill="#B5844B" opacity="0.5"/>
+        <ellipse cx="12" cy="95" rx="10" ry="3" fill="#B5844B" opacity="0.5"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+  <footer class="footer">
+    <p>🇦🇪 <span data-i18n="uaeCulture">UAE Culture</span> Learning Kids — Discover, Learn, Play</p>
+    <p style="margin-top:6px;"><a href="/updates" style="color:rgba(255,255,255,0.5); font-size:12px; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#FFD700'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">v5.1 — View Update Log</a></p>
+  </footer>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/chat-games.js" defer></script>
+  <script src="/js/mascot.js" defer></script>
+  <script src="/js/whats-new.js" defer></script>
+</body>
+</html>
+

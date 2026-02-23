@@ -1,0 +1,541 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#FFD700">
+  <title>UAE Culture Learning Kids — UAE Culture Learning Kids</title>
+  <link rel="stylesheet" href="/css/style.css">
+  <link rel="stylesheet" href="/css/mascot.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@400;600;700&family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <script src="/js/api-shim.js"></script>
+  <script src="/js/progression.js" defer></script>
+  <script src="/js/voice-picker.js" defer></script>
+  <script src="/js/i18n.js" defer></script>
+</head>
+<body>
+  <nav class="navbar">
+    <div class="nav-inner">
+      <button class="lang-toggle" id="langToggle" onclick="toggleLanguage()" title="Switch Language">
+        <span class="lang-flag">🇦🇪</span><span class="lang-label">عربي</span>
+      </button>
+      <a href="/" class="nav-logo">
+        <span class="nav-logo-icon">🇦🇪</span>
+        <span data-i18n="uaeCulture">UAE CULTURE</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="/" class="nav-link" data-i18n="home">HOME</a>
+        <a href="/landmarks" class="nav-link" data-i18n="landmarks">LANDMARKS</a>
+        <a href="/traditions" class="nav-link" data-i18n="traditions">TRADITIONS</a>
+        <a href="/food" class="nav-link" data-i18n="food">FOOD</a>
+        <a href="/arabic" class="nav-link" data-i18n="arabic">ARABIC</a>
+        <a href="/games" class="nav-link" data-i18n="gamesArcade">GAMES</a>
+        <a href="/quiz" class="nav-link" data-i18n="quiz">QUIZ</a>
+        <a href="/matching" class="nav-link" data-i18n="match">MATCH</a>
+        <a href="/timeline" class="nav-link" data-i18n="timeline">TIMELINE</a>
+      </div>
+      <div class="nav-progress-area">
+        <div class="nav-streak" id="navStreak" title="Daily Streak">
+          <span class="streak-flame">🔥</span>
+          <span class="streak-count" id="streakCount">0</span>
+        </div>
+        <div class="nav-hearts" id="navHearts">
+          <span id="heartsDisplay">❤️❤️❤️❤️❤️</span>
+        </div>
+        <div class="nav-xp" id="navXP">
+          <div class="nav-level-badge" id="navLevelBadge">🧭 Explorer</div>
+          <div class="nav-xp-bar">
+            <div class="nav-xp-fill" id="navXPFill" style="width:0%"></div>
+          </div>
+          <div class="nav-xp-text" id="navXPText">0 XP</div>
+        </div>
+        <button class="nav-sound-btn" id="soundToggle" onclick="toggleMusic()" title="Toggle Music"><span id="soundIcon">🔇</span></button>
+        <button class="nav-settings-btn" id="voiceSettingsBtn" onclick="toggleVoicePanel()" title="Voice Settings">⚙️</button>
+      </div>
+      <button class="nav-burger" onclick="toggleNav()">☰</button>
+    </div>
+  </nav>
+  <main class="main-content">
+
+
+<!-- ===== SPLASH / INTRO SCREEN ===== -->
+<div class="splash-overlay" id="splashOverlay">
+  <div class="splash-bg"></div>
+  <div class="splash-particles">
+    <span class="splash-particle" style="left:10%; animation-delay:0s;"></span>
+    <span class="splash-particle" style="left:30%; animation-delay:0.5s;"></span>
+    <span class="splash-particle" style="left:50%; animation-delay:1s;"></span>
+    <span class="splash-particle" style="left:70%; animation-delay:1.5s;"></span>
+    <span class="splash-particle" style="left:90%; animation-delay:2s;"></span>
+  </div>
+
+  <div class="splash-content" id="splashContent">
+    <!-- Step 1: Welcome -->
+    <div class="splash-step active" id="splashStep1">
+      <div class="splash-flag">🇦🇪</div>
+      <h1 class="splash-title">UAE Culture<br><span class="gold">Learning Kids</span></h1>
+      <p class="splash-text" data-i18n="splashWelcome">Welcome, young explorer! You are about to go on an amazing journey through the United Arab Emirates!</p>
+      <button class="btn btn-primary btn-lg splash-btn" onclick="nextSplashStep(2)" data-i18n-html="letsGo">
+        LET'S GO! 🚀
+      </button>
+      <button class="splash-voice-btn" onclick="speakText(t('splashWelcome'))">
+        🔊 Listen
+      </button>
+    </div>
+
+    <!-- Step 2: What you'll learn -->
+    <div class="splash-step" id="splashStep2">
+      <h2 class="splash-step-title"><span data-i18n="whatYouDiscover">What You'll</span> <span class="gold" data-i18n="discover">Discover</span></h2>
+      <div class="splash-features">
+        <div class="splash-feature" style="animation-delay:0.1s">
+          <div class="splash-feature-icon">🏗️</div>
+          <div class="splash-feature-text">
+            <strong data-i18n="famousLandmarks">Famous Landmarks</strong>
+            <span data-i18n="landmarksDesc">Burj Khalifa, Sheikh Zayed Mosque, and more!</span>
+          </div>
+        </div>
+        <div class="splash-feature" style="animation-delay:0.2s">
+          <div class="splash-feature-icon">🦅</div>
+          <div class="splash-feature-text">
+            <strong data-i18n="ancientTraditions">Ancient Traditions</strong>
+            <span data-i18n="traditionsDesc">Falconry, pearl diving, camel racing</span>
+          </div>
+        </div>
+        <div class="splash-feature" style="animation-delay:0.3s">
+          <div class="splash-feature-icon">🍛</div>
+          <div class="splash-feature-text">
+            <strong data-i18n="traditionalFood">Traditional Food</strong>
+            <span data-i18n="foodDesc">Machboos, Luqaimat, and delicious dishes</span>
+          </div>
+        </div>
+        <div class="splash-feature" style="animation-delay:0.4s">
+          <div class="splash-feature-icon">📖</div>
+          <div class="splash-feature-text">
+            <strong data-i18n="arabicWordsTitle">Arabic Words</strong>
+            <span data-i18n="arabicDesc">Learn how to say Hello, Thank you, and more!</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg splash-btn" onclick="nextSplashStep(3)" data-i18n="whatElse">WHAT ELSE? →</button>
+      <button class="splash-voice-btn" onclick="speakText(t('splashWelcome'))">
+        🔊 Listen
+      </button>
+    </div>
+
+    <!-- Step 3: How it works -->
+    <div class="splash-step" id="splashStep3">
+      <h2 class="splash-step-title"><span data-i18n="howItWorks">How It</span> <span class="gold" data-i18n="works">Works</span></h2>
+      <div class="splash-how">
+        <div class="splash-how-item">
+          <div class="splash-how-number">1</div>
+          <div class="splash-how-text">
+            <strong data-i18n="readLearn">Read & Learn</strong>
+            <span data-i18n="readLearnDesc">Each page teaches you cool facts with a voice that reads to you!</span>
+          </div>
+        </div>
+        <div class="splash-how-item">
+          <div class="splash-how-number">2</div>
+          <div class="splash-how-text">
+            <strong data-i18n="playGames">Play Games</strong>
+            <span data-i18n="playGamesDesc">Quizzes, scrambles, matching, true/false — 8 different games!</span>
+          </div>
+        </div>
+        <div class="splash-how-item">
+          <div class="splash-how-number">3</div>
+          <div class="splash-how-text">
+            <strong data-i18n="levelUp">Level Up!</strong>
+            <span data-i18n="levelUpDesc">Earn XP, keep your streak, unlock badges, and become a Legend!</span>
+          </div>
+        </div>
+      </div>
+      <button class="btn btn-primary btn-lg splash-btn" onclick="nextSplashStep(4)" data-i18n="almostReady">ALMOST READY! →</button>
+      <button class="splash-voice-btn" onclick="speakText(t('readLearnDesc'))">
+        🔊 Listen
+      </button>
+    </div>
+
+    <!-- Step 4: Enter your name -->
+    <div class="splash-step" id="splashStep4">
+      <h2 class="splash-step-title"><span data-i18n="whatsYourName">What's Your</span> <span class="gold" data-i18n="name">Name</span>?</h2>
+      <p class="splash-text" data-i18n="namePrompt">Tell us your name so we can track your progress!</p>
+      <input type="text" id="splashName" class="splash-name-input" data-i18n="namePlaceholder" placeholder="Type your name here..." maxlength="20" autofocus>
+      <button class="btn btn-primary btn-lg splash-btn" onclick="enterGame()" data-i18n="startExploring">
+        START EXPLORING! 🌍
+      </button>
+      <button class="splash-voice-btn" onclick="speakText(t('namePrompt'))">
+        🔊 Listen
+      </button>
+    </div>
+  </div>
+
+  <!-- Progress dots -->
+  <div class="splash-dots">
+    <div class="splash-dot active" data-step="1"></div>
+    <div class="splash-dot" data-step="2"></div>
+    <div class="splash-dot" data-step="3"></div>
+    <div class="splash-dot" data-step="4"></div>
+  </div>
+</div>
+
+<!-- ===== MAIN PAGE (hidden until splash done) ===== -->
+<div id="mainPage" style="display:none;">
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-particles">
+    <span class="hero-particle" style="left:10%; animation-delay:0s;"></span>
+    <span class="hero-particle" style="left:25%; animation-delay:0.8s;"></span>
+    <span class="hero-particle" style="left:40%; animation-delay:1.6s;"></span>
+    <span class="hero-particle" style="left:55%; animation-delay:2.4s;"></span>
+    <span class="hero-particle" style="left:70%; animation-delay:3.2s;"></span>
+    <span class="hero-particle" style="left:85%; animation-delay:4s;"></span>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-badge">🌍 <span data-i18n="welcomeBack">WELCOME BACK,</span> <span id="heroPlayerName">EXPLORER</span></div>
+    <h1 class="hero-title">
+      <span class="gold" data-i18n="heroTitle1">UAE CULTURE</span><br><span data-i18n="heroTitle2">LEARNING KIDS</span>
+    </h1>
+    <p class="hero-subtitle" data-i18n="heroSubtitle">
+      Follow the learning path below — earn XP, unlock badges, and become a UAE Legend!
+    </p>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-value">10</div>
+        <div class="hero-stat-label" data-i18n="games">GAMES</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">50+</div>
+        <div class="hero-stat-label" data-i18n="questions">QUESTIONS</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">16</div>
+        <div class="hero-stat-label" data-i18n="arabicWords">ARABIC WORDS</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-value">10</div>
+        <div class="hero-stat-label" data-i18n="badges">BADGES</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-scroll"><span></span></div>
+</section>
+
+<!-- LEARNING PATH -->
+<section class="section" id="gamesSection">
+  <div class="section-inner section-center">
+    <div class="section-badge">🗺️ <span data-i18n="yourLearningPath">YOUR LEARNING PATH</span></div>
+    <h2 class="section-title"><span data-i18n="followThe">Follow the</span> <span class="gold" data-i18n="journey">Journey</span></h2>
+    <p class="section-subtitle" data-i18n="pathSubtitle">Complete each step to unlock the next. Learn first, then test your skills!</p>
+
+    <div class="learning-path" id="learningPath">
+      <!-- Unit 1: UAE Basics -->
+      <div class="path-unit">
+        <div class="path-unit-label" data-i18n="unit1">UNIT 1 — UAE BASICS</div>
+        <div class="path-row path-row-left">
+          <a class="path-node" data-node="landmarks" href="/landmarks">
+            <div class="path-node-icon">🏗️</div>
+            <div class="path-node-label" data-i18n="landmarksLabel">Landmarks</div>
+            <div class="path-node-type" data-i18n="learn">LEARN</div>
+            <div class="path-node-check">✓</div>
+          </a>
+          <div class="path-connector"></div>
+          <a class="path-node" data-node="traditions" href="/traditions">
+            <div class="path-node-icon">🦅</div>
+            <div class="path-node-label" data-i18n="traditionsLabel">Traditions</div>
+            <div class="path-node-type" data-i18n="learn">LEARN</div>
+            <div class="path-node-check">✓</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 2: Flavors -->
+      <div class="path-unit">
+        <div class="path-unit-label" data-i18n="unit2">UNIT 2 — FLAVORS & LANGUAGE</div>
+        <div class="path-row path-row-right">
+          <a class="path-node" data-node="food" href="/food">
+            <div class="path-node-icon">🍛</div>
+            <div class="path-node-label" data-i18n="foodLabel">Food</div>
+            <div class="path-node-type" data-i18n="learn">LEARN</div>
+            <div class="path-node-check">✓</div>
+          </a>
+          <div class="path-connector"></div>
+          <a class="path-node" data-node="arabic" href="/arabic">
+            <div class="path-node-icon">📖</div>
+            <div class="path-node-label" data-i18n="arabicLabel">Arabic</div>
+            <div class="path-node-type" data-i18n="play">PLAY</div>
+            <div class="path-node-check">✓</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 3: Challenge -->
+      <div class="path-unit">
+        <div class="path-unit-label" data-i18n="unit3">UNIT 3 — QUIZ TIME</div>
+        <div class="path-row path-row-left">
+          <a class="path-node" data-node="quiz" href="/quiz">
+            <div class="path-node-icon">🧠</div>
+            <div class="path-node-label" data-i18n="cultureQuiz">Culture Quiz</div>
+            <div class="path-node-type" data-i18n="quiz">QUIZ</div>
+            <div class="path-node-check">✓</div>
+          </a>
+          <div class="path-connector"></div>
+          <a class="path-node" data-node="matching" href="/matching">
+            <div class="path-node-icon">🃏</div>
+            <div class="path-node-label" data-i18n="matchCards">Match Cards</div>
+            <div class="path-node-type" data-i18n="play">PLAY</div>
+            <div class="path-node-check">✓</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 4: Word Games -->
+      <div class="path-unit">
+        <div class="path-unit-label" data-i18n="unit4">UNIT 4 — WORD GAMES</div>
+        <div class="path-row path-row-right">
+          <a class="path-node" data-node="fill-blank" href="/fill-blank">
+            <div class="path-node-icon">📝</div>
+            <div class="path-node-label" data-i18n="fillBlank">Fill Blank</div>
+            <div class="path-node-type" data-i18n="play">PLAY</div>
+            <div class="path-node-check">✓</div>
+          </a>
+          <div class="path-connector"></div>
+          <a class="path-node" data-node="scramble" href="/scramble">
+            <div class="path-node-icon">🔤</div>
+            <div class="path-node-label" data-i18n="scramble">Scramble</div>
+            <div class="path-node-type" data-i18n="play">PLAY</div>
+            <div class="path-node-check">✓</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 5: Speed & Listen -->
+      <div class="path-unit">
+        <div class="path-unit-label" data-i18n="unit5">UNIT 5 — SPEED & LISTEN</div>
+        <div class="path-row path-row-left">
+          <a class="path-node" data-node="true-false" href="/true-false">
+            <div class="path-node-icon">⚡</div>
+            <div class="path-node-label" data-i18n="trueFalse">True/False</div>
+            <div class="path-node-type" data-i18n="speed">SPEED</div>
+            <div class="path-node-check">✓</div>
+          </a>
+          <div class="path-connector"></div>
+          <a class="path-node" data-node="listening" href="/listening">
+            <div class="path-node-icon">👂</div>
+            <div class="path-node-label" data-i18n="listening">Listening</div>
+            <div class="path-node-type" data-i18n="listen">LISTEN</div>
+            <div class="path-node-check">✓</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Unit 6: History -->
+      <div class="path-unit">
+        <div class="path-unit-label" data-i18n="unit6">UNIT 6 — HISTORY</div>
+        <div class="path-row path-row-right">
+          <a class="path-node" data-node="timeline" href="/timeline">
+            <div class="path-node-icon">📜</div>
+            <div class="path-node-label" data-i18n="timelineLabel">Timeline</div>
+            <div class="path-node-type" data-i18n="sort">SORT</div>
+            <div class="path-node-check">✓</div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Finish line -->
+      <div class="path-finish">
+        <div class="path-finish-icon">🏆</div>
+        <div class="path-finish-label" data-i18n="uaeLegend">UAE LEGEND</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BADGES -->
+<section class="section badges-section">
+  <div class="section-inner section-center">
+    <div class="section-badge">🏅 <span data-i18n="achievements">ACHIEVEMENTS</span></div>
+    <h2 class="section-title"><span data-i18n="your">Your</span> <span class="gold" data-i18n="badgesTitle">Badges</span></h2>
+    <p class="section-subtitle" data-i18n="badgesSubtitle">Complete challenges to unlock all 10 badges!</p>
+
+    <div class="badges-grid" id="badgesGrid">
+      <!-- Rendered by learning-path.js -->
+    </div>
+  </div>
+</section>
+
+<!-- FACTS -->
+<section class="section facts-section">
+  <div class="section-inner section-center">
+    <div class="section-badge">🤔 <span data-i18n="didYouKnow">DID YOU KNOW?</span></div>
+    <h2 class="section-title" data-i18n="funFacts">Fun Facts</h2>
+    <div class="facts-carousel" id="factsCarousel">
+      <div class="fact-card active">
+        <div class="fact-emoji">🏗️</div>
+        <p>The Burj Khalifa is so tall, you can watch the sunset from the base, take the elevator to the top, and watch the sunset AGAIN!</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🦅</div>
+        <p>Falcons in the UAE have their own passports! They can travel on planes in first class!</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🏜️</div>
+        <p>The UAE's Liwa Oasis has sand dunes over 300 meters tall — taller than the Eiffel Tower!</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🌴</div>
+        <p>The UAE has over 42 million date palm trees — that's about 5 trees for every person!</p>
+      </div>
+      <div class="fact-card">
+        <div class="fact-emoji">🇦🇪</div>
+        <p>The UAE was formed on December 2nd, 1971, when 7 emirates united under one flag!</p>
+      </div>
+    </div>
+    <div class="facts-dots" id="factsDots"></div>
+  </div>
+</section>
+
+<div class="cta-section">
+  <div class="section-badge">🚀 <span data-i18n="ready">READY?</span></div>
+  <h2 class="section-title" style="text-align:center; margin-bottom:20px;" data-i18n="startLearningNow">Start Learning Now</h2>
+  <a href="/landmarks" class="btn btn-primary btn-lg" data-i18n="beginWithLandmarks">BEGIN WITH LANDMARKS 🏗️</a>
+</div>
+
+</div><!-- end mainPage -->
+
+<script src="/js/learning-path.js"></script>
+<script src="/js/splash.js"></script>
+  </main>
+  <!-- ===== RASHID — Emirati Mascot Character v3 (Persistent Chat) ===== -->
+<div class="mascot-container mascot-idle" id="mascotContainer">
+
+  <!-- PERSISTENT CHAT PANEL -->
+  <div class="rashid-chat-panel" id="rashidChatPanel">
+    <div class="rashid-chat-header">
+      <span class="rashid-chat-name">RASHID</span>
+      <div class="rashid-chat-header-actions">
+        <button class="rashid-chat-games-btn" id="rashidGamesMenuBtn" title="Mini-Games">🎮</button>
+        <button class="rashid-chat-close" id="rashidChatClose">&times;</button>
+      </div>
+    </div>
+    <div class="rashid-happiness-bar">
+      <div class="rashid-happiness-fill" id="rashidHappinessFill" style="width:0%"></div>
+      <span class="rashid-happiness-label" id="rashidHappinessLabel">🙂</span>
+    </div>
+    <div class="rashid-chat-messages" id="rashidChatMessages"></div>
+    <div class="rashid-games-menu" id="rashidGamesMenu" style="display:none;">
+      <div class="rashid-games-menu-title">🎮 Chat Games</div>
+      <div class="rashid-games-menu-grid" id="rashidGamesMenuGrid"></div>
+      <button class="rashid-games-menu-back" id="rashidGamesMenuBack">Back to Chat</button>
+    </div>
+    <div class="rashid-chat-input-area" id="rashidChatInputArea">
+      <input type="text" id="rashidChatField" placeholder="Ask me anything..." autocomplete="off" maxlength="200"/>
+      <button id="rashidChatSend">&#10148;</button>
+    </div>
+  </div>
+
+  <!-- Floating hearts on hover -->
+  <div class="mascot-hearts" id="mascotHearts"></div>
+
+  <!-- Character SVG -->
+  <div class="mascot-character" id="mascotCharacter">
+    <svg id="mascotSvg" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="sparkleGlow">
+          <stop offset="0%" stop-color="#FFD700" stop-opacity="0.8"/>
+          <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+        </radialGradient>
+      </defs>
+      <g id="mascotBody" transform="translate(100,150)">
+        <g id="mascotSparkles" opacity="0.8">
+          <polygon points="48,-85 50,-80 55,-82 51,-78 54,-73 49,-76 47,-71 47,-76 42,-74 46,-78 43,-82" fill="#FFD700" opacity="0.7">
+            <animate attributeName="opacity" values="0.7;0.2;0.7" dur="2s" repeatCount="indefinite"/>
+          </polygon>
+          <polygon points="-52,-70 -50,-65 -45,-67 -49,-63 -46,-58 -51,-61 -53,-56 -53,-61 -58,-59 -54,-63 -57,-67" fill="#FFD700" opacity="0.5">
+            <animate attributeName="opacity" values="0.5;0.1;0.5" dur="2.5s" repeatCount="indefinite"/>
+          </polygon>
+          <circle cx="55" cy="-50" r="2" fill="#FFD700" opacity="0.6">
+            <animate attributeName="opacity" values="0.6;0;0.6" dur="1.8s" repeatCount="indefinite"/>
+            <animate attributeName="r" values="2;3;2" dur="1.8s" repeatCount="indefinite"/>
+          </circle>
+          <circle cx="-58" cy="-40" r="1.5" fill="#FFD700" opacity="0.4">
+            <animate attributeName="opacity" values="0.4;0;0.4" dur="2.2s" repeatCount="indefinite"/>
+            <animate attributeName="r" values="1.5;2.5;1.5" dur="2.2s" repeatCount="indefinite"/>
+          </circle>
+        </g>
+        <path id="mascotGhutrah" d="M-40,-75 Q-45,-95 -30,-105 Q0,-115 30,-105 Q45,-95 40,-75 L45,-30 Q45,-15 35,-5 L35,15 Q30,25 20,20 L-20,20 Q-30,25 -35,15 L-35,-5 Q-45,-15 -45,-30 Z" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.8"/>
+        <path d="M-35,-5 Q-42,20 -38,45 Q-35,55 -28,50" fill="#FFFFFF" stroke="#E8E8E8" stroke-width="0.5" opacity="0.9"/>
+        <path d="M35,-5 Q42,20 38,45 Q35,55 28,50" fill="#FFFFFF" stroke="#E8E8E8" stroke-width="0.5" opacity="0.9"/>
+        <ellipse id="mascotAgal" cx="0" cy="-92" rx="28" ry="5" fill="#1A1A1A"/>
+        <ellipse cx="0" cy="-89" rx="26" ry="4.5" fill="#2A2A2A"/>
+        <ellipse id="mascotFace" cx="0" cy="-58" rx="33" ry="37" fill="#F4C99B"/>
+        <ellipse cx="-21" cy="-45" rx="9" ry="6" fill="#F7A8A8" opacity="0.45"/>
+        <ellipse cx="21" cy="-45" rx="9" ry="6" fill="#F7A8A8" opacity="0.45"/>
+        <g id="mascotEyes">
+          <ellipse cx="-12" cy="-60" rx="10" ry="11.5" fill="#FFFFFF"/>
+          <circle cx="-11" cy="-59" r="7" fill="#2C1810"/>
+          <circle cx="-9" cy="-63" r="3" fill="#FFFFFF"/>
+          <circle cx="-13" cy="-57" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+          <circle cx="-7" cy="-61" r="1" fill="#FFFFFF" opacity="0.3"/>
+          <ellipse cx="12" cy="-60" rx="10" ry="11.5" fill="#FFFFFF"/>
+          <circle cx="13" cy="-59" r="7" fill="#2C1810"/>
+          <circle cx="15" cy="-63" r="3" fill="#FFFFFF"/>
+          <circle cx="11" cy="-57" r="1.5" fill="#FFFFFF" opacity="0.6"/>
+          <circle cx="17" cy="-61" r="1" fill="#FFFFFF" opacity="0.3"/>
+        </g>
+        <g id="mascotBlink">
+          <ellipse cx="-12" cy="-60" rx="10.5" ry="0" fill="#F4C99B">
+            <animate attributeName="ry" values="0;11.5;0" dur="4s" keyTimes="0;0.04;0.08" repeatCount="indefinite" begin="2s"/>
+          </ellipse>
+          <ellipse cx="12" cy="-60" rx="10.5" ry="0" fill="#F4C99B">
+            <animate attributeName="ry" values="0;11.5;0" dur="4s" keyTimes="0;0.04;0.08" repeatCount="indefinite" begin="2s"/>
+          </ellipse>
+        </g>
+        <g id="mascotBrows">
+          <path d="M-21,-74 Q-12,-80 -3,-74" fill="none" stroke="#5C3A1E" stroke-width="2" stroke-linecap="round"/>
+          <path d="M3,-74 Q12,-80 21,-74" fill="none" stroke="#5C3A1E" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <ellipse cx="0" cy="-50" rx="2.5" ry="2" fill="#E8A878"/>
+        <g id="mascotMouth">
+          <path id="mascotSmile" d="M-10,-40 Q0,-30 10,-40" fill="none" stroke="#8B4513" stroke-width="2.2" stroke-linecap="round"/>
+          <ellipse id="mascotMouthOpen" cx="0" cy="-38" rx="7" ry="5" fill="#8B4513" style="display:none"/>
+        </g>
+        <path id="mascotKandura" d="M-28,-22 Q-30,-15 -35,30 L-38,85 Q-35,95 0,100 Q35,95 38,85 L35,30 Q30,-15 28,-22 Z" fill="#FFFFFF" stroke="#E0E0E0" stroke-width="0.8"/>
+        <path d="M-12,-22 Q0,-18 12,-22" fill="none" stroke="#D4A24E" stroke-width="1" opacity="0.6"/>
+        <path d="M-10,-19 Q0,-15 10,-19" fill="none" stroke="#D4A24E" stroke-width="0.6" opacity="0.4"/>
+        <g id="mascotLeftArm" style="transform-origin: -28px -15px;">
+          <path d="M-28,-15 Q-45,10 -42,40" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round"/>
+          <path d="M-28,-15 Q-45,10 -42,40" fill="none" stroke="#E8E8E8" stroke-width="13" stroke-linecap="round" opacity="0.3"/>
+          <circle cx="-42" cy="40" r="9" fill="#F4C99B"/>
+          <circle cx="-42" cy="40" r="9" fill="#E8A878" opacity="0.2"/>
+        </g>
+        <g id="mascotRightArm" style="transform-origin: 28px -15px;">
+          <path d="M28,-15 Q45,10 42,40" fill="none" stroke="#FFFFFF" stroke-width="13" stroke-linecap="round"/>
+          <path d="M28,-15 Q45,10 42,40" fill="none" stroke="#E8E8E8" stroke-width="13" stroke-linecap="round" opacity="0.3"/>
+          <circle cx="42" cy="40" r="9" fill="#F4C99B"/>
+          <circle cx="42" cy="40" r="9" fill="#E8A878" opacity="0.2"/>
+        </g>
+        <ellipse cx="-12" cy="96" rx="12" ry="5" fill="#C4935A"/>
+        <ellipse cx="12" cy="96" rx="12" ry="5" fill="#C4935A"/>
+        <ellipse cx="-12" cy="95" rx="10" ry="3" fill="#B5844B" opacity="0.5"/>
+        <ellipse cx="12" cy="95" rx="10" ry="3" fill="#B5844B" opacity="0.5"/>
+      </g>
+    </svg>
+  </div>
+</div>
+
+  <footer class="footer">
+    <p>🇦🇪 <span data-i18n="uaeCulture">UAE Culture</span> Learning Kids — Discover, Learn, Play</p>
+    <p style="margin-top:6px;"><a href="/updates" style="color:rgba(255,255,255,0.5); font-size:12px; text-decoration:none; transition:color 0.2s;" onmouseover="this.style.color='#FFD700'" onmouseout="this.style.color='rgba(255,255,255,0.5)'">v5.1 — View Update Log</a></p>
+  </footer>
+  <script src="/js/main.js" defer></script>
+  <script src="/js/chat-games.js" defer></script>
+  <script src="/js/mascot.js" defer></script>
+  <script src="/js/whats-new.js" defer></script>
+</body>
+</html>
+
