@@ -1,0 +1,356 @@
+{
+  "arabicWords": [
+    {"word": "مرحبا", "transliteration": "Marhaba", "meaning": "Hello", "emoji": "👋"},
+    {"word": "شكراً", "transliteration": "Shukran", "meaning": "Thank you", "emoji": "🙏"},
+    {"word": "سلام", "transliteration": "Salaam", "meaning": "Peace", "emoji": "☮️"},
+    {"word": "صديق", "transliteration": "Sadeeq", "meaning": "Friend", "emoji": "🤝"},
+    {"word": "ماء", "transliteration": "Maa'", "meaning": "Water", "emoji": "💧"},
+    {"word": "شمس", "transliteration": "Shams", "meaning": "Sun", "emoji": "☀️"},
+    {"word": "قمر", "transliteration": "Qamar", "meaning": "Moon", "emoji": "🌙"},
+    {"word": "نجمة", "transliteration": "Najma", "meaning": "Star", "emoji": "⭐"},
+    {"word": "بحر", "transliteration": "Bahr", "meaning": "Sea", "emoji": "🌊"},
+    {"word": "صحراء", "transliteration": "Sahraa'", "meaning": "Desert", "emoji": "🏜️"},
+    {"word": "جمل", "transliteration": "Jamal", "meaning": "Camel", "emoji": "🐪"},
+    {"word": "كتاب", "transliteration": "Kitaab", "meaning": "Book", "emoji": "📖"},
+    {"word": "عائلة", "transliteration": "'Aa'ila", "meaning": "Family", "emoji": "👨‍👩‍👧‍👦"},
+    {"word": "وطن", "transliteration": "Watan", "meaning": "Homeland", "emoji": "🇦🇪"},
+    {"word": "حب", "transliteration": "Hubb", "meaning": "Love", "emoji": "❤️"},
+    {"word": "نخلة", "transliteration": "Nakhla", "meaning": "Palm Tree", "emoji": "🌴"},
+    {"word": "صباح الخير", "transliteration": "Sabaah al-Khayr", "meaning": "Good morning", "emoji": "🌅"},
+    {"word": "مساء الخير", "transliteration": "Masaa' al-Khayr", "meaning": "Good evening", "emoji": "🌇"},
+    {"word": "معذرة", "transliteration": "Ma'dhira", "meaning": "Excuse me", "emoji": "🙇"},
+    {"word": "من فضلك", "transliteration": "Min Fadlak", "meaning": "Please", "emoji": "🙂"},
+    {"word": "نعم", "transliteration": "Na'am", "meaning": "Yes", "emoji": "✅"},
+    {"word": "لا", "transliteration": "Laa", "meaning": "No", "emoji": "❌"},
+    {"word": "إن شاء الله", "transliteration": "In Shaa' Allah", "meaning": "God willing", "emoji": "🤲"},
+    {"word": "ما شاء الله", "transliteration": "Maa Shaa' Allah", "meaning": "Amazing/God has willed", "emoji": "✨"},
+    {"word": "الحمد لله", "transliteration": "Al-Hamdu Lillah", "meaning": "Thank God", "emoji": "🕊️"},
+    {"word": "يلا", "transliteration": "Yalla", "meaning": "Let's go", "emoji": "🏃"},
+    {"word": "واحد", "transliteration": "Waahid", "meaning": "One", "emoji": "1️⃣"},
+    {"word": "اثنان", "transliteration": "Ithnaan", "meaning": "Two", "emoji": "2️⃣"},
+    {"word": "ثلاثة", "transliteration": "Thalaatha", "meaning": "Three", "emoji": "3️⃣"},
+    {"word": "أربعة", "transliteration": "Arba'a", "meaning": "Four", "emoji": "4️⃣"},
+    {"word": "خمسة", "transliteration": "Khamsa", "meaning": "Five", "emoji": "5️⃣"},
+    {"word": "صقر", "transliteration": "Saqr", "meaning": "Falcon", "emoji": "🦅"},
+    {"word": "حصان", "transliteration": "Hisaan", "meaning": "Horse", "emoji": "🐴"},
+    {"word": "سمك", "transliteration": "Samak", "meaning": "Fish", "emoji": "🐟"},
+    {"word": "طائر", "transliteration": "Taa'ir", "meaning": "Bird", "emoji": "🐦"},
+    {"word": "جبل", "transliteration": "Jabal", "meaning": "Mountain", "emoji": "🏔️"},
+    {"word": "نهر", "transliteration": "Nahr", "meaning": "River", "emoji": "🏞️"},
+    {"word": "زهرة", "transliteration": "Zahra", "meaning": "Flower", "emoji": "🌺"},
+    {"word": "شجرة", "transliteration": "Shajara", "meaning": "Tree", "emoji": "🌳"},
+    {"word": "أب", "transliteration": "Ab", "meaning": "Father", "emoji": "👨"},
+    {"word": "أم", "transliteration": "Umm", "meaning": "Mother", "emoji": "👩"},
+    {"word": "أخ", "transliteration": "Akh", "meaning": "Brother", "emoji": "👦"},
+    {"word": "أخت", "transliteration": "Ukht", "meaning": "Sister", "emoji": "👧"},
+    {"word": "خبز", "transliteration": "Khubz", "meaning": "Bread", "emoji": "🍞"},
+    {"word": "حليب", "transliteration": "Haleeb", "meaning": "Milk", "emoji": "🥛"},
+    {"word": "بيت", "transliteration": "Bayt", "meaning": "House", "emoji": "🏠"},
+    {"word": "مدرسة", "transliteration": "Madrasa", "meaning": "School", "emoji": "🏫"},
+    {"word": "مسجد", "transliteration": "Masjid", "meaning": "Mosque", "emoji": "🕌"},
+    {"word": "سيارة", "transliteration": "Sayyaara", "meaning": "Car", "emoji": "🚗"},
+    {"word": "طائرة", "transliteration": "Taa'ira", "meaning": "Airplane", "emoji": "✈️"}
+  ],
+  "listeningChallenge": [
+    {
+      "arabicWord": "مرحبا",
+      "transliteration": "Marhaba",
+      "correctMeaning": "Hello",
+      "wrongOptions": ["Goodbye", "Thank you", "Welcome"]
+    },
+    {
+      "arabicWord": "شكراً",
+      "transliteration": "Shukran",
+      "correctMeaning": "Thank you",
+      "wrongOptions": ["Sorry", "Please", "Hello"]
+    },
+    {
+      "arabicWord": "سلام",
+      "transliteration": "Salaam",
+      "correctMeaning": "Peace",
+      "wrongOptions": ["War", "Quiet", "Happiness"]
+    },
+    {
+      "arabicWord": "صديق",
+      "transliteration": "Sadeeq",
+      "correctMeaning": "Friend",
+      "wrongOptions": ["Brother", "Neighbor", "Teacher"]
+    },
+    {
+      "arabicWord": "ماء",
+      "transliteration": "Maa'",
+      "correctMeaning": "Water",
+      "wrongOptions": ["Juice", "Milk", "Rain"]
+    },
+    {
+      "arabicWord": "شمس",
+      "transliteration": "Shams",
+      "correctMeaning": "Sun",
+      "wrongOptions": ["Moon", "Star", "Sky"]
+    },
+    {
+      "arabicWord": "قمر",
+      "transliteration": "Qamar",
+      "correctMeaning": "Moon",
+      "wrongOptions": ["Sun", "Star", "Cloud"]
+    },
+    {
+      "arabicWord": "نجمة",
+      "transliteration": "Najma",
+      "correctMeaning": "Star",
+      "wrongOptions": ["Moon", "Planet", "Sun"]
+    },
+    {
+      "arabicWord": "بحر",
+      "transliteration": "Bahr",
+      "correctMeaning": "Sea",
+      "wrongOptions": ["Lake", "River", "Ocean"]
+    },
+    {
+      "arabicWord": "صحراء",
+      "transliteration": "Sahraa'",
+      "correctMeaning": "Desert",
+      "wrongOptions": ["Forest", "Mountain", "Beach"]
+    },
+    {
+      "arabicWord": "جمل",
+      "transliteration": "Jamal",
+      "correctMeaning": "Camel",
+      "wrongOptions": ["Horse", "Donkey", "Goat"]
+    },
+    {
+      "arabicWord": "كتاب",
+      "transliteration": "Kitaab",
+      "correctMeaning": "Book",
+      "wrongOptions": ["Notebook", "Letter", "Newspaper"]
+    },
+    {
+      "arabicWord": "عائلة",
+      "transliteration": "'Aa'ila",
+      "correctMeaning": "Family",
+      "wrongOptions": ["Friends", "Village", "Tribe"]
+    },
+    {
+      "arabicWord": "وطن",
+      "transliteration": "Watan",
+      "correctMeaning": "Homeland",
+      "wrongOptions": ["City", "Village", "Country"]
+    },
+    {
+      "arabicWord": "حب",
+      "transliteration": "Hubb",
+      "correctMeaning": "Love",
+      "wrongOptions": ["Kindness", "Friendship", "Hope"]
+    },
+    {
+      "arabicWord": "نخلة",
+      "transliteration": "Nakhla",
+      "correctMeaning": "Palm Tree",
+      "wrongOptions": ["Olive Tree", "Cactus", "Flower"]
+    },
+    {
+      "arabicWord": "صباح الخير",
+      "transliteration": "Sabaah al-Khayr",
+      "correctMeaning": "Good morning",
+      "wrongOptions": ["Good evening", "Good night", "Good afternoon"]
+    },
+    {
+      "arabicWord": "مساء الخير",
+      "transliteration": "Masaa' al-Khayr",
+      "correctMeaning": "Good evening",
+      "wrongOptions": ["Good morning", "Good night", "Goodbye"]
+    },
+    {
+      "arabicWord": "معذرة",
+      "transliteration": "Ma'dhira",
+      "correctMeaning": "Excuse me",
+      "wrongOptions": ["Thank you", "Sorry", "Please"]
+    },
+    {
+      "arabicWord": "من فضلك",
+      "transliteration": "Min Fadlak",
+      "correctMeaning": "Please",
+      "wrongOptions": ["Thank you", "Excuse me", "You're welcome"]
+    },
+    {
+      "arabicWord": "نعم",
+      "transliteration": "Na'am",
+      "correctMeaning": "Yes",
+      "wrongOptions": ["No", "Maybe", "Sometimes"]
+    },
+    {
+      "arabicWord": "لا",
+      "transliteration": "Laa",
+      "correctMeaning": "No",
+      "wrongOptions": ["Yes", "Maybe", "Always"]
+    },
+    {
+      "arabicWord": "إن شاء الله",
+      "transliteration": "In Shaa' Allah",
+      "correctMeaning": "God willing",
+      "wrongOptions": ["Thank God", "God is great", "God bless you"]
+    },
+    {
+      "arabicWord": "ما شاء الله",
+      "transliteration": "Maa Shaa' Allah",
+      "correctMeaning": "Amazing/God has willed",
+      "wrongOptions": ["God willing", "Thank God", "God is great"]
+    },
+    {
+      "arabicWord": "الحمد لله",
+      "transliteration": "Al-Hamdu Lillah",
+      "correctMeaning": "Thank God",
+      "wrongOptions": ["God willing", "God is great", "God bless you"]
+    },
+    {
+      "arabicWord": "يلا",
+      "transliteration": "Yalla",
+      "correctMeaning": "Let's go",
+      "wrongOptions": ["Stop", "Wait", "Hurry up"]
+    },
+    {
+      "arabicWord": "واحد",
+      "transliteration": "Waahid",
+      "correctMeaning": "One",
+      "wrongOptions": ["Two", "First", "Single"]
+    },
+    {
+      "arabicWord": "اثنان",
+      "transliteration": "Ithnaan",
+      "correctMeaning": "Two",
+      "wrongOptions": ["Three", "One", "Twelve"]
+    },
+    {
+      "arabicWord": "ثلاثة",
+      "transliteration": "Thalaatha",
+      "correctMeaning": "Three",
+      "wrongOptions": ["Two", "Four", "Thirteen"]
+    },
+    {
+      "arabicWord": "أربعة",
+      "transliteration": "Arba'a",
+      "correctMeaning": "Four",
+      "wrongOptions": ["Five", "Three", "Fourteen"]
+    },
+    {
+      "arabicWord": "خمسة",
+      "transliteration": "Khamsa",
+      "correctMeaning": "Five",
+      "wrongOptions": ["Four", "Six", "Fifteen"]
+    },
+    {
+      "arabicWord": "صقر",
+      "transliteration": "Saqr",
+      "correctMeaning": "Falcon",
+      "wrongOptions": ["Eagle", "Hawk", "Parrot"]
+    },
+    {
+      "arabicWord": "حصان",
+      "transliteration": "Hisaan",
+      "correctMeaning": "Horse",
+      "wrongOptions": ["Donkey", "Camel", "Zebra"]
+    },
+    {
+      "arabicWord": "سمك",
+      "transliteration": "Samak",
+      "correctMeaning": "Fish",
+      "wrongOptions": ["Whale", "Dolphin", "Shrimp"]
+    },
+    {
+      "arabicWord": "طائر",
+      "transliteration": "Taa'ir",
+      "correctMeaning": "Bird",
+      "wrongOptions": ["Butterfly", "Bat", "Bee"]
+    },
+    {
+      "arabicWord": "جبل",
+      "transliteration": "Jabal",
+      "correctMeaning": "Mountain",
+      "wrongOptions": ["Valley", "Desert", "Hill"]
+    },
+    {
+      "arabicWord": "نهر",
+      "transliteration": "Nahr",
+      "correctMeaning": "River",
+      "wrongOptions": ["Lake", "Sea", "Stream"]
+    },
+    {
+      "arabicWord": "زهرة",
+      "transliteration": "Zahra",
+      "correctMeaning": "Flower",
+      "wrongOptions": ["Leaf", "Tree", "Garden"]
+    },
+    {
+      "arabicWord": "شجرة",
+      "transliteration": "Shajara",
+      "correctMeaning": "Tree",
+      "wrongOptions": ["Bush", "Flower", "Forest"]
+    },
+    {
+      "arabicWord": "أب",
+      "transliteration": "Ab",
+      "correctMeaning": "Father",
+      "wrongOptions": ["Mother", "Uncle", "Grandfather"]
+    },
+    {
+      "arabicWord": "أم",
+      "transliteration": "Umm",
+      "correctMeaning": "Mother",
+      "wrongOptions": ["Father", "Aunt", "Grandmother"]
+    },
+    {
+      "arabicWord": "أخ",
+      "transliteration": "Akh",
+      "correctMeaning": "Brother",
+      "wrongOptions": ["Sister", "Cousin", "Friend"]
+    },
+    {
+      "arabicWord": "أخت",
+      "transliteration": "Ukht",
+      "correctMeaning": "Sister",
+      "wrongOptions": ["Brother", "Cousin", "Daughter"]
+    },
+    {
+      "arabicWord": "خبز",
+      "transliteration": "Khubz",
+      "correctMeaning": "Bread",
+      "wrongOptions": ["Rice", "Cake", "Cheese"]
+    },
+    {
+      "arabicWord": "حليب",
+      "transliteration": "Haleeb",
+      "correctMeaning": "Milk",
+      "wrongOptions": ["Water", "Juice", "Yogurt"]
+    },
+    {
+      "arabicWord": "بيت",
+      "transliteration": "Bayt",
+      "correctMeaning": "House",
+      "wrongOptions": ["Room", "Building", "Tent"]
+    },
+    {
+      "arabicWord": "مدرسة",
+      "transliteration": "Madrasa",
+      "correctMeaning": "School",
+      "wrongOptions": ["Library", "University", "Office"]
+    },
+    {
+      "arabicWord": "مسجد",
+      "transliteration": "Masjid",
+      "correctMeaning": "Mosque",
+      "wrongOptions": ["Church", "Temple", "Palace"]
+    },
+    {
+      "arabicWord": "سيارة",
+      "transliteration": "Sayyaara",
+      "correctMeaning": "Car",
+      "wrongOptions": ["Bus", "Truck", "Bicycle"]
+    },
+    {
+      "arabicWord": "طائرة",
+      "transliteration": "Taa'ira",
+      "correctMeaning": "Airplane",
+      "wrongOptions": ["Helicopter", "Rocket", "Boat"]
+    }
+  ]
+}
