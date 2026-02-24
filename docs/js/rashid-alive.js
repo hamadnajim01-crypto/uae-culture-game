@@ -17,8 +17,8 @@
     scheduleIdle();
     // Start random emoji bubbles every 8-15 seconds
     scheduleEmoji();
-    // Schedule the sneaky explorer sequence after 20-40 seconds
-    setTimeout(startSneakySequence, 20000 + Math.random() * 20000);
+    // Schedule the sneaky explorer sequence after 90-120 seconds (give user time to see Rashid first)
+    setTimeout(startSneakySequence, 90000 + Math.random() * 30000);
   }
 
   function scheduleIdle(){
@@ -131,40 +131,39 @@
       setTabThought('🏃 time for an adventure!');
     }, 6500);
 
-    // Thoughts while gone
-    setTimeout(function(){ setTabThought('🚶 *sneaking away...*'); }, 12000);
-    setTimeout(function(){ setTabThought('🌴 ooh a palm tree!'); }, 20000);
-    setTimeout(function(){ setTabThought('🐪 hello mr camel!'); }, 28000);
-    setTimeout(function(){ setTabThought('☕ mmm i smell karak chai...'); }, 36000);
-    setTimeout(function(){ setTabThought('🏜️ the desert is so pretty'); }, 44000);
-    setTimeout(function(){ setTabThought('💎 is that a pearl?!'); }, 52000);
-    setTimeout(function(){ setTabThought('😅 wait... where am i??'); }, 60000);
+    // Thoughts while gone (~20s away instead of 60s)
+    setTimeout(function(){ setTabThought('🚶 *sneaking away...*'); }, 9000);
+    setTimeout(function(){ setTabThought('🌴 ooh a palm tree!'); }, 12000);
+    setTimeout(function(){ setTabThought('🐪 hello mr camel!'); }, 15000);
+    setTimeout(function(){ setTabThought('☕ mmm i smell karak chai...'); }, 18000);
+    setTimeout(function(){ setTabThought('💎 is that a pearl?!'); }, 21000);
+    setTimeout(function(){ setTabThought('😅 wait... where am i??'); }, 24000);
 
-    // Step 5: Run across screen (66.5s)
+    // Step 5: Run across screen (26.5s)
     setTimeout(function(){
       setSneakyState('sneaky-run');
       setTabThought('🏃💨 GOTTA GO FAST!!');
-    }, 66500);
+    }, 26500);
 
-    // Step 6: Run back (69.7s)
+    // Step 6: Run back (29.7s)
     setTimeout(function(){
       setSneakyState('sneaky-runback');
       setTabThought('🏃💨 WRONG WAY WRONG WAY!!');
-    }, 69700);
+    }, 29700);
 
-    // Step 7: Settle at bottom (72.9s)
+    // Step 7: Settle at bottom (32.9s)
     setTimeout(function(){
       setSneakyState('sneaky-settle');
       setTabThought('😳 ...did anyone see that?');
-    }, 72900);
+    }, 32900);
 
-    // Step 8: Say "huh" (73.5s)
+    // Step 8: Say "huh" (33.5s)
     setTimeout(function(){
       showSpeech('huh? 😳', 3000);
       setTabThought('😳 huh? nothing happened...');
-    }, 73500);
+    }, 33500);
 
-    // Step 9: Back to normal (77s)
+    // Step 9: Back to normal (37s)
     setTimeout(function(){
       sneakyRunning = false;
       sneakyDone = true;
@@ -172,7 +171,7 @@
       restoreTab();
       container.className = container.className.replace(/sneaky-\w+/g,'').trim();
       if(!container.classList.contains('mascot-idle')) container.classList.add('mascot-idle');
-    }, 77000);
+    }, 37000);
   }
 
   // Init on DOM ready
