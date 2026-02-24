@@ -1,0 +1,435 @@
+{
+  "landmarks": [
+    {
+      "id": 1,
+      "name": "Burj Khalifa",
+      "nameAr": "برج خليفة",
+      "city": "Dubai",
+      "description": "The tallest building in the world at 828 meters! It has 163 floors and was completed in 2010.",
+      "funFact": "The tip of Burj Khalifa can be seen from 95 kilometers away!",
+      "emoji": "🏗️",
+      "image": "burj-khalifa"
+    },
+    {
+      "id": 2,
+      "name": "Sheikh Zayed Grand Mosque",
+      "nameAr": "جامع الشيخ زايد الكبير",
+      "city": "Abu Dhabi",
+      "description": "One of the largest mosques in the world. It has 82 domes, over 1,000 columns, and the world's largest hand-knotted carpet!",
+      "funFact": "The carpet inside weighs 35 tons and was made by 1,200 workers!",
+      "emoji": "🕌",
+      "image": "sheikh-zayed-mosque"
+    },
+    {
+      "id": 3,
+      "name": "Museum of the Future",
+      "nameAr": "متحف المستقبل",
+      "city": "Dubai",
+      "description": "A unique torus-shaped building covered in Arabic calligraphy. It showcases future technologies and innovations.",
+      "funFact": "The building has no pillars inside — it's held up by its shell structure!",
+      "emoji": "🔮",
+      "image": "museum-future"
+    },
+    {
+      "id": 4,
+      "name": "Louvre Abu Dhabi",
+      "nameAr": "لوفر أبوظبي",
+      "city": "Abu Dhabi",
+      "description": "An art museum on Saadiyat Island with a stunning dome that creates a 'rain of light' effect.",
+      "funFact": "The dome weighs about 7,500 tons — heavier than the Eiffel Tower!",
+      "emoji": "🎨",
+      "image": "louvre-abudhabi"
+    },
+    {
+      "id": 5,
+      "name": "Al Ain Oasis",
+      "nameAr": "واحة العين",
+      "city": "Al Ain",
+      "description": "A UNESCO World Heritage Site with over 147,000 date palm trees! It shows the ancient falaj irrigation system.",
+      "funFact": "The falaj water system is over 3,000 years old!",
+      "emoji": "🌴",
+      "image": "al-ain-oasis"
+    },
+    {
+      "id": 6,
+      "name": "Dubai Frame",
+      "nameAr": "برواز دبي",
+      "city": "Dubai",
+      "description": "A 150-meter tall frame-shaped landmark. One side shows old Dubai, the other shows new Dubai!",
+      "funFact": "It is the largest picture frame in the world!",
+      "emoji": "🖼️",
+      "image": "dubai-frame"
+    },
+    {
+      "id": 7,
+      "name": "Palm Jumeirah",
+      "nameAr": "نخلة جميرا",
+      "city": "Dubai",
+      "description": "A man-made island shaped like a palm tree, built using millions of tons of rock and sand. It is one of the largest artificial islands in the world and is home to luxury hotels, apartments, and beaches.",
+      "funFact": "Palm Jumeirah added 78 kilometers of coastline to Dubai and can be seen from space!",
+      "emoji": "🏝️",
+      "image": "palm-jumeirah"
+    },
+    {
+      "id": 8,
+      "name": "Burj Al Arab",
+      "nameAr": "برج العرب",
+      "city": "Dubai",
+      "description": "A sail-shaped luxury hotel standing on its own man-made island. It is 321 meters tall and one of the most famous buildings in Dubai, often called one of the most luxurious hotels in the world.",
+      "funFact": "The Burj Al Arab has a helipad near its roof that has been used as a tennis court 211 meters above the ground!",
+      "emoji": "⛵",
+      "image": "burj-al-arab"
+    },
+    {
+      "id": 9,
+      "name": "Jebel Hafeet",
+      "nameAr": "جبل حفيت",
+      "city": "Al Ain",
+      "description": "The tallest mountain in Abu Dhabi emirate, rising 1,249 meters above sea level. A winding road leads to the top where you can see amazing views of Al Ain and the surrounding desert.",
+      "funFact": "Ancient tombs over 5,000 years old have been found at the base of Jebel Hafeet!",
+      "emoji": "🏔️",
+      "image": "jebel-hafeet"
+    },
+    {
+      "id": 10,
+      "name": "Ain Dubai",
+      "nameAr": "عين دبي",
+      "city": "Dubai",
+      "description": "The world's largest and tallest observation wheel, standing 250 meters high on Bluewaters Island. It offers breathtaking views of Dubai's skyline, the Arabian Gulf, and Palm Jumeirah.",
+      "funFact": "Ain Dubai is almost twice the height of the London Eye!",
+      "emoji": "🎡",
+      "image": "ain-dubai"
+    },
+    {
+      "id": 11,
+      "name": "Dubai Mall",
+      "nameAr": "دبي مول",
+      "city": "Dubai",
+      "description": "One of the largest shopping malls in the world with over 1,200 shops. It also has an aquarium, an ice rink, and a dinosaur skeleton inside!",
+      "funFact": "The Dubai Aquarium inside the mall holds 10 million liters of water and over 33,000 sea animals!",
+      "emoji": "🛍️",
+      "image": "dubai-mall"
+    },
+    {
+      "id": 12,
+      "name": "Ferrari World",
+      "nameAr": "عالم فيراري",
+      "city": "Abu Dhabi",
+      "description": "The world's first Ferrari-branded theme park, located on Yas Island. It has the world's fastest roller coaster and many exciting rides and attractions all about the famous car brand.",
+      "funFact": "The Formula Rossa roller coaster reaches 240 km/h in just 4.9 seconds — the fastest in the world!",
+      "emoji": "🏎️",
+      "image": "ferrari-world"
+    },
+    {
+      "id": 13,
+      "name": "Yas Island",
+      "nameAr": "جزيرة ياس",
+      "city": "Abu Dhabi",
+      "description": "A huge entertainment island with theme parks, a Formula 1 race track, water parks, and beaches. It is one of the top family destinations in the UAE.",
+      "funFact": "The Yas Marina Circuit hosts the Abu Dhabi Formula 1 Grand Prix every year, and the track is lit up at night for the race!",
+      "emoji": "🎢",
+      "image": "yas-island"
+    },
+    {
+      "id": 14,
+      "name": "Qasr Al Hosn",
+      "nameAr": "قصر الحصن",
+      "city": "Abu Dhabi",
+      "description": "The oldest stone building in Abu Dhabi, originally built as a watchtower in the 1760s. It was the home of the ruling Al Nahyan family and is now a museum telling the story of Abu Dhabi's history.",
+      "funFact": "Qasr Al Hosn started as a single coral and sea-stone watchtower to protect the island's only freshwater well!",
+      "emoji": "🏰",
+      "image": "qasr-al-hosn"
+    },
+    {
+      "id": 15,
+      "name": "Etihad Towers",
+      "nameAr": "أبراج الاتحاد",
+      "city": "Abu Dhabi",
+      "description": "A stunning complex of five skyscrapers on the Abu Dhabi Corniche. The tallest tower reaches 305 meters and together they form one of the most recognizable parts of the city skyline.",
+      "funFact": "The towers were featured in the movie Fast & Furious 7, where cars jumped between two of the buildings!",
+      "emoji": "🏙️",
+      "image": "etihad-towers"
+    },
+    {
+      "id": 16,
+      "name": "Dubai Creek",
+      "nameAr": "خور دبي",
+      "city": "Dubai",
+      "description": "A natural saltwater inlet that divides Dubai into two halves — Deira and Bur Dubai. For centuries, it was the heart of Dubai's trading activity, and traditional wooden boats called abras still carry people across it today.",
+      "funFact": "Dubai Creek has been used for trading for over 4,000 years, making it one of the oldest trading routes in the region!",
+      "emoji": "🚣",
+      "image": "dubai-creek"
+    },
+    {
+      "id": 17,
+      "name": "Sharjah Museum of Islamic Civilization",
+      "nameAr": "متحف الشارقة للحضارة الإسلامية",
+      "city": "Sharjah",
+      "description": "A beautiful museum housed in a restored traditional souq building along the Sharjah waterfront. It displays over 5,000 artifacts from across the Islamic world, including rare manuscripts, ceramics, and scientific instruments.",
+      "funFact": "The museum has a stunning golden dome and shows how Muslim scholars made important discoveries in math, astronomy, and medicine!",
+      "emoji": "🏛️",
+      "image": "sharjah-museum-islamic-civilization"
+    },
+    {
+      "id": 18,
+      "name": "Hatta Dam",
+      "nameAr": "سد حتا",
+      "city": "Hatta",
+      "description": "A beautiful turquoise-water dam nestled in the Hajar Mountains near the Oman border. The area is popular for kayaking, hiking, and mountain biking, surrounded by dramatic rocky landscapes.",
+      "funFact": "The water at Hatta Dam changes color depending on the season — from deep blue to bright turquoise green!",
+      "emoji": "💧",
+      "image": "hatta-dam"
+    },
+    {
+      "id": 19,
+      "name": "Fujairah Fort",
+      "nameAr": "قلعة الفجيرة",
+      "city": "Fujairah",
+      "description": "One of the oldest forts in the UAE, believed to date back over 500 years. Built from mud-brick, stone, and gravel, it sits on a hilltop overlooking the city of Fujairah and was once used to defend the area.",
+      "funFact": "Fujairah Fort is the only fort in the UAE built entirely from local stone rather than coral!",
+      "emoji": "🏯",
+      "image": "fujairah-fort"
+    },
+    {
+      "id": 20,
+      "name": "Ras Al Khaimah National Museum",
+      "nameAr": "متحف رأس الخيمة الوطني",
+      "city": "Ras Al Khaimah",
+      "description": "Located in a former fort and palace that was home to the ruling family until the 1960s. The museum showcases local history, archaeology, and traditional Emirati life through fascinating artifacts and exhibits.",
+      "funFact": "The museum displays artifacts that are over 7,000 years old, showing that people have lived in the area since the Stone Age!",
+      "emoji": "🏺",
+      "image": "ras-al-khaimah-national-museum"
+    }
+  ],
+
+  "traditions": [
+    {
+      "id": 1,
+      "name": "Falconry",
+      "nameAr": "الصقارة",
+      "description": "Falconry has been practiced in the UAE for thousands of years. Falcons were used for hunting in the desert. Today, it's a beloved sport and cultural symbol.",
+      "emoji": "🦅"
+    },
+    {
+      "id": 2,
+      "name": "Pearl Diving",
+      "nameAr": "الغوص",
+      "description": "Before oil was discovered, pearl diving was the main source of income. Divers would hold their breath and dive deep into the Arabian Gulf to find precious pearls.",
+      "emoji": "🤿"
+    },
+    {
+      "id": 3,
+      "name": "Camel Racing",
+      "nameAr": "سباق الهجن",
+      "description": "Camel racing is a popular traditional sport. Camels can run up to 65 km/h! Modern races use robot jockeys controlled by remote.",
+      "emoji": "🐫"
+    },
+    {
+      "id": 4,
+      "name": "Henna Art",
+      "nameAr": "الحناء",
+      "description": "Henna is used to create beautiful temporary designs on hands and feet, especially for celebrations like weddings and Eid.",
+      "emoji": "✋"
+    },
+    {
+      "id": 5,
+      "name": "Al Ayyala Dance",
+      "nameAr": "العيالة",
+      "description": "A traditional group dance where men stand in rows, swaying bamboo sticks in rhythm with drums and singing. It's a UNESCO heritage tradition!",
+      "emoji": "💃"
+    },
+    {
+      "id": 6,
+      "name": "Arabic Coffee (Gahwa)",
+      "nameAr": "القهوة العربية",
+      "description": "Arabic coffee is a symbol of hospitality. It's made with cardamom and saffron, served in small cups called 'finjaan', and always offered to guests.",
+      "emoji": "☕"
+    },
+    {
+      "id": 7,
+      "name": "Dhow Building",
+      "nameAr": "صناعة الداو",
+      "description": "Dhows are traditional wooden sailing boats that have been built by hand in the UAE for centuries. Skilled craftsmen use teak and other strong woods to create these beautiful vessels without modern blueprints. Dhows were essential for pearl diving, fishing, and trading across the Arabian Gulf and Indian Ocean.",
+      "emoji": "⛵"
+    },
+    {
+      "id": 8,
+      "name": "Sadu Weaving",
+      "nameAr": "السدو",
+      "description": "Sadu is a traditional form of weaving practiced by Bedouin women using sheep, camel, and goat wool. The colorful geometric patterns are used to make rugs, cushions, and tent decorations. Sadu weaving is recognized by UNESCO as an important cultural heritage of the UAE.",
+      "emoji": "🧶"
+    },
+    {
+      "id": 9,
+      "name": "Yowla Dance",
+      "nameAr": "اليولة",
+      "description": "The Yowla is a traditional Emirati dance where performers toss and twirl a lightweight rifle or stick into the air while moving in rhythm to drums and chanting. It is a celebration of bravery and pride, often performed at national celebrations and weddings.",
+      "emoji": "🕺"
+    },
+    {
+      "id": 10,
+      "name": "Majlis",
+      "nameAr": "المجلس",
+      "description": "The Majlis is a traditional gathering place where people come together to share news, discuss community matters, and welcome guests. It is an important part of Emirati hospitality and social life. Guests are always offered Arabic coffee and dates when they enter a Majlis.",
+      "emoji": "🏠"
+    },
+    {
+      "id": 11,
+      "name": "Date Harvesting",
+      "nameAr": "جني التمور",
+      "description": "Date palm trees have been central to life in the UAE for thousands of years. Harvesting dates is a seasonal tradition that takes place in late summer, when families gather to pick the ripe fruit. The UAE grows over 200 varieties of dates, and they are a symbol of generosity and hospitality.",
+      "emoji": "🌴"
+    },
+    {
+      "id": 12,
+      "name": "Perfume and Oud Culture",
+      "nameAr": "ثقافة العطور والعود",
+      "description": "Perfume and incense are deeply important in Emirati culture. Oud, made from the resin of agarwood trees, is one of the most prized and expensive fragrances in the world. Burning bukhoor (scented wood chips) in the home to welcome guests is a long-standing tradition throughout the UAE.",
+      "emoji": "🪷"
+    },
+    {
+      "id": 13,
+      "name": "Traditional Fishing (Al Hadar)",
+      "nameAr": "الحظرة",
+      "description": "Al Hadar is an ancient fishing method using handmade wire traps placed in shallow coastal waters. Fishermen have used these dome-shaped traps for generations to catch fish along the Arabian Gulf. Fishing was one of the most important ways of life for coastal communities before the discovery of oil.",
+      "emoji": "🐟"
+    },
+    {
+      "id": 14,
+      "name": "Arabian Horse Breeding",
+      "nameAr": "تربية الخيول العربية",
+      "description": "Arabian horses are one of the oldest and most beautiful horse breeds in the world, known for their speed, endurance, and intelligence. Bedouin tribes in the UAE have bred these horses for thousands of years, treating them as treasured members of the family. Today, the UAE is one of the top countries for Arabian horse breeding and racing.",
+      "emoji": "🐴"
+    },
+    {
+      "id": 15,
+      "name": "Ramadan Traditions",
+      "nameAr": "تقاليد رمضان",
+      "description": "Ramadan is the holy month when Muslims fast from sunrise to sunset. In the UAE, families gather every evening for Iftar, the meal that breaks the fast, often sharing food with neighbors and those in need. Children enjoy special activities, decorations, and the tradition of Haq Al Layla, where they go door-to-door collecting sweets and nuts.",
+      "emoji": "🌙"
+    }
+  ],
+
+  "foods": [
+    {
+      "id": 1,
+      "name": "Machboos",
+      "nameAr": "مجبوس",
+      "description": "The national dish! Spiced rice with meat (chicken, lamb, or fish), flavored with saffron, dried limes, and aromatic spices.",
+      "emoji": "🍛",
+      "ingredients": ["Rice", "Meat", "Saffron", "Dried Lime", "Onions", "Tomatoes"]
+    },
+    {
+      "id": 2,
+      "name": "Luqaimat",
+      "nameAr": "لقيمات",
+      "description": "Sweet crispy dumplings drizzled with date syrup (dibs). They're crunchy on the outside and soft on the inside — a favorite dessert!",
+      "emoji": "🍩",
+      "ingredients": ["Flour", "Yeast", "Sugar", "Saffron", "Date Syrup"]
+    },
+    {
+      "id": 3,
+      "name": "Harees",
+      "nameAr": "هريس",
+      "description": "A comforting dish made of wheat and meat, slow-cooked until smooth and creamy. Very popular during Ramadan!",
+      "emoji": "🥣",
+      "ingredients": ["Wheat", "Meat", "Butter", "Salt", "Cinnamon"]
+    },
+    {
+      "id": 4,
+      "name": "Balaleet",
+      "nameAr": "بلاليط",
+      "description": "Sweet vermicelli noodles with cardamom and saffron, topped with an egg omelette. It's a traditional breakfast!",
+      "emoji": "🍝",
+      "ingredients": ["Vermicelli", "Sugar", "Cardamom", "Saffron", "Eggs", "Butter"]
+    },
+    {
+      "id": 5,
+      "name": "Thareed",
+      "nameAr": "ثريد",
+      "description": "Thin bread layered with a rich meat and vegetable stew. It's said to be one of Prophet Muhammad's favorite dishes.",
+      "emoji": "🫓",
+      "ingredients": ["Bread", "Meat", "Vegetables", "Tomatoes", "Spices"]
+    },
+    {
+      "id": 6,
+      "name": "Dates",
+      "nameAr": "التمر",
+      "description": "The UAE grows over 200 varieties of dates! Dates are a symbol of generosity and are always offered to guests with Arabic coffee.",
+      "emoji": "🌴",
+      "ingredients": ["Fresh dates from palm trees!"]
+    },
+    {
+      "id": 7,
+      "name": "Khameer",
+      "nameAr": "خمير",
+      "description": "A soft, fluffy traditional Emirati bread flavored with turmeric and cardamom. It is often eaten for breakfast with cheese, honey, or date syrup.",
+      "emoji": "🍞",
+      "ingredients": ["Flour", "Yeast", "Turmeric", "Cardamom", "Sugar", "Milk", "Butter"]
+    },
+    {
+      "id": 8,
+      "name": "Margoogat",
+      "nameAr": "مرقوقة",
+      "description": "A hearty stew made with vegetables and thin pieces of dough simmered in a spiced tomato broth. It is a warm, filling meal that families love to share during cooler evenings.",
+      "emoji": "🍲",
+      "ingredients": ["Flour Dough", "Tomatoes", "Zucchini", "Potatoes", "Onions", "Garlic", "Dried Lime", "Spices"]
+    },
+    {
+      "id": 9,
+      "name": "Chebab",
+      "nameAr": "شباب",
+      "description": "Emirati-style pancakes flavored with saffron, turmeric, and cardamom, giving them a golden color. They are a popular breakfast treat, often served with cream cheese or date syrup.",
+      "emoji": "🥞",
+      "ingredients": ["Flour", "Eggs", "Saffron", "Turmeric", "Cardamom", "Sugar", "Yeast"]
+    },
+    {
+      "id": 10,
+      "name": "Asida",
+      "nameAr": "عصيدة",
+      "description": "A sweet, warm porridge made from wheat flour, butter, and sugar. It has a smooth, pudding-like texture and is often served during celebrations and Ramadan.",
+      "emoji": "🍮",
+      "ingredients": ["Wheat Flour", "Butter", "Sugar", "Water", "Cardamom"]
+    },
+    {
+      "id": 11,
+      "name": "Jasheed",
+      "nameAr": "جشيد",
+      "description": "A traditional coastal dish made with dried and shredded shark meat cooked with onions, spices, and oil. It shows how Emirati families near the sea used every part of their catch.",
+      "emoji": "🦈",
+      "ingredients": ["Dried Shark Meat", "Onions", "Garlic", "Turmeric", "Cumin", "Oil", "Spices"]
+    },
+    {
+      "id": 12,
+      "name": "Madrooba",
+      "nameAr": "مضروبة",
+      "description": "A creamy, comforting dish made with salted fish that is slow-cooked and beaten until thick and smooth. It is seasoned with turmeric, garlic, and spices, and served with rice or bread.",
+      "emoji": "🐟",
+      "ingredients": ["Salted Fish", "Rice Flour", "Turmeric", "Garlic", "Onions", "Butter", "Spices"]
+    },
+    {
+      "id": 13,
+      "name": "Samboosa",
+      "nameAr": "سمبوسة",
+      "description": "Crispy triangle-shaped pastries stuffed with spiced meat, cheese, or vegetables. They are a favorite snack during Ramadan and a tasty treat for any occasion.",
+      "emoji": "🥟",
+      "ingredients": ["Pastry Sheets", "Minced Meat", "Onions", "Parsley", "Spices", "Oil"]
+    },
+    {
+      "id": 14,
+      "name": "Regag",
+      "nameAr": "رقاق",
+      "description": "A paper-thin crispy bread cooked on a large hot plate called a 'tawa'. It can be eaten plain, with eggs, cheese, or honey, and is a beloved everyday food across the UAE.",
+      "emoji": "🫓",
+      "ingredients": ["Flour", "Water", "Salt", "Oil"]
+    },
+    {
+      "id": 15,
+      "name": "Lgeimat Zayed",
+      "nameAr": "لقيمات زايد",
+      "description": "A modern take on the classic Luqaimat, these sweet dumplings are often filled with cream, chocolate, or Nutella and decorated with colorful toppings. They are named in honor of Sheikh Zayed and popular at festivals.",
+      "emoji": "🍡",
+      "ingredients": ["Flour", "Yeast", "Sugar", "Saffron", "Cream Filling", "Chocolate", "Date Syrup", "Toppings"]
+    }
+  ]
+}

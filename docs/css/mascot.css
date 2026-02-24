@@ -31,6 +31,38 @@
 @keyframes shadowBreathe{0%,100%{transform:scaleX(1);opacity:.3}50%{transform:scaleX(1.2);opacity:.15}}
 @keyframes mascotRainbow{0%{filter:drop-shadow(0 0 8px rgba(255,0,0,.4))}16%{filter:drop-shadow(0 0 8px rgba(255,165,0,.4))}33%{filter:drop-shadow(0 0 8px rgba(255,255,0,.4))}50%{filter:drop-shadow(0 0 8px rgba(0,255,0,.4))}66%{filter:drop-shadow(0 0 8px rgba(0,150,255,.4))}83%{filter:drop-shadow(0 0 8px rgba(150,0,255,.4))}100%{filter:drop-shadow(0 0 8px rgba(255,0,0,.4))}}
 
+/* --- Sneaky sequence --- */
+@keyframes mascotHideDown{0%{transform:translateY(0)}100%{transform:translateY(200px)}}
+@keyframes mascotPeekUp{0%{transform:translateY(200px)}100%{transform:translateY(130px)}}
+@keyframes mascotEyesLeft{0%,100%{transform:translateX(0)}30%,70%{transform:translateX(-5px)}}
+@keyframes mascotEyesRight{0%,100%{transform:translateX(0)}30%,70%{transform:translateX(5px)}}
+@keyframes mascotRunRight{0%{transform:translateX(0) translateY(160px) scaleX(-1)}100%{transform:translateX(-120vw) translateY(160px) scaleX(-1)}}
+@keyframes mascotRunBack{0%{transform:translateX(-120vw) translateY(160px) scaleX(1)}100%{transform:translateX(0) translateY(160px) scaleX(1)}}
+@keyframes mascotRunBounce{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-12px) rotate(-8deg)}50%{transform:translateY(0) rotate(0)}75%{transform:translateY(-12px) rotate(8deg)}}
+@keyframes mascotSettleDown{0%{transform:translateY(160px)}100%{transform:translateY(140px)}}
+@keyframes speechBubblePop{0%{opacity:0;transform:translateX(-50%) scale(0)}50%{opacity:1;transform:translateX(-50%) scale(1.15)}100%{opacity:1;transform:translateX(-50%) scale(1)}}
+@keyframes speechBubbleFade{0%{opacity:1;transform:translateX(-50%) scale(1)}100%{opacity:0;transform:translateX(-50%) scale(.5)}}
+
+.mascot-sneaky-hide .mascot-character{animation:mascotHideDown .8s ease-in forwards}
+.mascot-sneaky-hide .mascot-glow,.mascot-sneaky-hide .mascot-sparkle-orbit,.mascot-sneaky-hide .mascot-shadow,.mascot-sneaky-hide .rashid-games-floating-btn{opacity:0;transition:opacity .3s}
+.mascot-sneaky-peek .mascot-character{animation:mascotPeekUp .6s ease-out forwards}
+.mascot-sneaky-peek #mascotEyes{animation:mascotEyesLeft 1.2s ease-in-out .3s,mascotEyesRight 1.2s ease-in-out 1.8s}
+.mascot-sneaky-peek .mascot-glow,.mascot-sneaky-peek .mascot-sparkle-orbit,.mascot-sneaky-peek .mascot-shadow,.mascot-sneaky-peek .rashid-games-floating-btn{opacity:0}
+.mascot-sneaky-gone .mascot-character{transform:translateY(200px)}
+.mascot-sneaky-gone .mascot-glow,.mascot-sneaky-gone .mascot-sparkle-orbit,.mascot-sneaky-gone .mascot-shadow,.mascot-sneaky-gone .rashid-games-floating-btn{opacity:0}
+.mascot-sneaky-run .mascot-character{animation:mascotRunRight 3s ease-in-out forwards}
+.mascot-sneaky-run #mascotSvg{animation:mascotRunBounce .35s ease-in-out infinite}
+.mascot-sneaky-run .mascot-glow,.mascot-sneaky-run .mascot-sparkle-orbit,.mascot-sneaky-run .mascot-shadow,.mascot-sneaky-run .rashid-games-floating-btn{opacity:0}
+.mascot-sneaky-runback .mascot-character{animation:mascotRunBack 3s ease-in-out forwards}
+.mascot-sneaky-runback #mascotSvg{animation:mascotRunBounce .35s ease-in-out infinite}
+.mascot-sneaky-runback .mascot-glow,.mascot-sneaky-runback .mascot-sparkle-orbit,.mascot-sneaky-runback .mascot-shadow,.mascot-sneaky-runback .rashid-games-floating-btn{opacity:0}
+.mascot-sneaky-settle .mascot-character{animation:mascotSettleDown .5s ease-out forwards}
+.mascot-sneaky-settle .mascot-glow,.mascot-sneaky-settle .mascot-sparkle-orbit,.mascot-sneaky-settle .rashid-games-floating-btn{opacity:0}
+
+.rashid-speech-bubble{position:absolute;top:-10px;left:50%;transform:translateX(-50%);background:rgba(255,215,0,.95);color:#1a1a2e;font-family:Orbitron,sans-serif;font-size:14px;font-weight:700;padding:6px 14px;border-radius:14px;white-space:nowrap;pointer-events:none;z-index:1005;animation:speechBubblePop .4s ease-out forwards;box-shadow:0 4px 15px rgba(255,215,0,.4)}
+.rashid-speech-bubble::after{content:'';position:absolute;bottom:-8px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-top-color:rgba(255,215,0,.95)}
+.rashid-speech-bubble.fade{animation:speechBubbleFade .5s ease-in forwards}
+
 /* ===== CONTAINER ===== */
 .mascot-container{position:fixed;bottom:20px;right:20px;z-index:1000;width:120px;height:180px;cursor:pointer;transition:width .4s ease,height .4s ease;animation:mascotEntrance .8s cubic-bezier(.34,1.56,.64,1)}
 .mascot-container.mascot-large{width:160px;height:240px}
