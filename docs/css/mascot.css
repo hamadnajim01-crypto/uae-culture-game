@@ -36,10 +36,10 @@
 @keyframes mascotPeekUp{0%{transform:translateY(200px)}100%{transform:translateY(130px)}}
 @keyframes mascotEyesLeft{0%,100%{transform:translateX(0)}30%,70%{transform:translateX(-5px)}}
 @keyframes mascotEyesRight{0%,100%{transform:translateX(0)}30%,70%{transform:translateX(5px)}}
-@keyframes mascotRunRight{0%{transform:translateX(0) translateY(160px) scaleX(-1)}100%{transform:translateX(-120vw) translateY(160px) scaleX(-1)}}
-@keyframes mascotRunBack{0%{transform:translateX(-120vw) translateY(160px) scaleX(1)}100%{transform:translateX(0) translateY(160px) scaleX(1)}}
+@keyframes mascotRunRight{0%{transform:translateX(0) translateY(0) scaleX(-1)}100%{transform:translateX(-120vw) translateY(0) scaleX(-1)}}
+@keyframes mascotRunBack{0%{transform:translateX(-120vw) translateY(0) scaleX(1)}100%{transform:translateX(0) translateY(0) scaleX(1)}}
 @keyframes mascotRunBounce{0%,100%{transform:translateY(0) rotate(0)}25%{transform:translateY(-12px) rotate(-8deg)}50%{transform:translateY(0) rotate(0)}75%{transform:translateY(-12px) rotate(8deg)}}
-@keyframes mascotSettleDown{0%{transform:translateY(160px)}100%{transform:translateY(140px)}}
+@keyframes mascotSettleDown{0%{transform:translateY(20px)}100%{transform:translateY(0)}}
 @keyframes speechBubblePop{0%{opacity:0;transform:translateX(-50%) scale(0)}50%{opacity:1;transform:translateX(-50%) scale(1.15)}100%{opacity:1;transform:translateX(-50%) scale(1)}}
 @keyframes speechBubbleFade{0%{opacity:1;transform:translateX(-50%) scale(1)}100%{opacity:0;transform:translateX(-50%) scale(.5)}}
 

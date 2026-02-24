@@ -1,9 +1,8 @@
-/* Rashid Alive v3 — Random idle + sneaky explorer sequence + tab thoughts */
+/* Rashid Alive v4 — Idle animations + chat-triggered sneaky sequences */
 (function(){
   var EMOJIS = ['🇦🇪','⭐','✨','💛','🦅','🐪','🌴','☕','🔥','💎','🎮','🏆','🌙','📖','🎉','💪'];
   var IDLE_ACTIONS = ['wave','dance','nod','spin','celebrate'];
-  var container, bubbleBox, timer, emojiTimer;
-  var sneakyDone = false;
+  var container, bubbleBox;
   var sneakyRunning = false;
   var originalTitle = '';
 
@@ -17,13 +16,13 @@
     scheduleIdle();
     // Start random emoji bubbles every 8-15 seconds
     scheduleEmoji();
-    // Schedule the sneaky explorer sequence after 90-120 seconds (give user time to see Rashid first)
-    setTimeout(startSneakySequence, 90000 + Math.random() * 30000);
+    // Hook into chat to listen for commands
+    hookChat();
   }
 
   function scheduleIdle(){
     var delay = 12000 + Math.random() * 13000;
-    timer = setTimeout(function(){
+    setTimeout(function(){
       if(!sneakyRunning) doIdleAction();
       scheduleIdle();
     }, delay);
@@ -31,7 +30,7 @@
 
   function scheduleEmoji(){
     var delay = 8000 + Math.random() * 7000;
-    emojiTimer = setTimeout(function(){
+    setTimeout(function(){
       if(!sneakyRunning) spawnEmoji();
       scheduleEmoji();
     }, delay);
@@ -88,90 +87,128 @@
     }, duration || 2500);
   }
 
-  /* ===== THE SNEAKY SEQUENCE ===== */
-  function startSneakySequence(){
-    if(sneakyDone || sneakyRunning) return;
-    // Don't interrupt if chat is open
-    var panel = document.getElementById('rashidChatPanel');
-    if(panel && panel.classList.contains('open')) {
-      setTimeout(startSneakySequence, 30000);
-      return;
-    }
+  function finishSequence(){
+    sneakyRunning = false;
+    setSneakyState('idle');
+    restoreTab();
+    container.className = container.className.replace(/sneaky-\w+/g,'').trim();
+    if(!container.classList.contains('mascot-idle')) container.classList.add('mascot-idle');
+  }
+
+  /* ===== RUN SEQUENCE — triggered by chat ===== */
+  function doRunSequence(){
+    if(sneakyRunning) return;
     sneakyRunning = true;
 
-    // Step 1: Hide down (0s)
+    // Run across screen (0s)
+    setSneakyState('sneaky-run');
+    setTabThought('🏃💨 GOTTA GO FAST!!');
+
+    // Run back (3.2s)
+    setTimeout(function(){
+      setSneakyState('sneaky-runback');
+      setTabThought('🏃💨 WRONG WAY WRONG WAY!!');
+    }, 3200);
+
+    // Settle back (6.4s)
+    setTimeout(function(){
+      setSneakyState('sneaky-settle');
+      setTabThought('😳 ...did anyone see that?');
+    }, 6400);
+
+    // Say "huh" (7s)
+    setTimeout(function(){
+      showSpeech('huh? 😳', 3000);
+      setTabThought('😳 huh? nothing happened...');
+    }, 7000);
+
+    // Back to normal (10.5s)
+    setTimeout(function(){
+      finishSequence();
+    }, 10500);
+  }
+
+  /* ===== PEEK SEQUENCE — triggered by chat ===== */
+  function doPeekSequence(){
+    if(sneakyRunning) return;
+    sneakyRunning = true;
+
+    // Hide down (0s)
     setSneakyState('sneaky-hide');
     setTabThought('🤫 *hides quietly*');
 
-    // Step 2: Peek up after 1.5s
+    // Peek up (1.5s)
     setTimeout(function(){
       setSneakyState('sneaky-peek');
       setTabThought('👀 anyone there...?');
     }, 1500);
 
-    // Step 2b: Looking left
+    // Look left (2.8s)
     setTimeout(function(){
       setTabThought('👈 hmm... no one on the left');
     }, 2800);
 
-    // Step 2c: Looking right
+    // Look right (4.2s)
     setTimeout(function(){
       setTabThought('👉 what about this side...');
     }, 4200);
 
-    // Step 3: Hide again after peeking (5.5s)
+    // Hide again (5.5s)
     setTimeout(function(){
       setSneakyState('sneaky-hide');
       setTabThought('😏 coast is clear hehe');
     }, 5500);
 
-    // Step 4: Fully gone (6.5s)
-    setTimeout(function(){
-      setSneakyState('sneaky-gone');
-      setTabThought('🏃 time for an adventure!');
-    }, 6500);
-
-    // Thoughts while gone (~20s away instead of 60s)
-    setTimeout(function(){ setTabThought('🚶 *sneaking away...*'); }, 9000);
-    setTimeout(function(){ setTabThought('🌴 ooh a palm tree!'); }, 12000);
-    setTimeout(function(){ setTabThought('🐪 hello mr camel!'); }, 15000);
-    setTimeout(function(){ setTabThought('☕ mmm i smell karak chai...'); }, 18000);
-    setTimeout(function(){ setTabThought('💎 is that a pearl?!'); }, 21000);
-    setTimeout(function(){ setTabThought('😅 wait... where am i??'); }, 24000);
-
-    // Step 5: Run across screen (26.5s)
-    setTimeout(function(){
-      setSneakyState('sneaky-run');
-      setTabThought('🏃💨 GOTTA GO FAST!!');
-    }, 26500);
-
-    // Step 6: Run back (29.7s)
-    setTimeout(function(){
-      setSneakyState('sneaky-runback');
-      setTabThought('🏃💨 WRONG WAY WRONG WAY!!');
-    }, 29700);
-
-    // Step 7: Settle at bottom (32.9s)
+    // Come back up + say huh (6.5s)
     setTimeout(function(){
       setSneakyState('sneaky-settle');
-      setTabThought('😳 ...did anyone see that?');
-    }, 32900);
+      setTabThought('😳 ...wait what was i doing?');
+    }, 6500);
 
-    // Step 8: Say "huh" (33.5s)
+    // Say "huh" (7s)
     setTimeout(function(){
       showSpeech('huh? 😳', 3000);
       setTabThought('😳 huh? nothing happened...');
-    }, 33500);
+    }, 7000);
 
-    // Step 9: Back to normal (37s)
+    // Back to normal (10.5s)
     setTimeout(function(){
-      sneakyRunning = false;
-      sneakyDone = true;
-      setSneakyState('idle');
-      restoreTab();
-      container.className = container.className.replace(/sneaky-\w+/g,'').trim();
-      if(!container.classList.contains('mascot-idle')) container.classList.add('mascot-idle');
-    }, 37000);
+      finishSequence();
+    }, 10500);
+  }
+
+  /* ===== CHAT COMMAND HOOK ===== */
+  function hookChat(){
+    var chatField = document.getElementById('rashidChatField');
+    var chatSend = document.getElementById('rashidChatSend');
+    if(!chatField) return;
+
+    // Intercept Enter key and send button
+    chatField.addEventListener('keydown', function(e){
+      if(e.key === 'Enter') handleCommand(chatField);
+    }, true);
+    if(chatSend){
+      chatSend.addEventListener('click', function(){
+        handleCommand(chatField);
+      }, true);
+    }
+  }
+
+  function handleCommand(field){
+    var text = field.value.trim().toLowerCase();
+    if(!text) return;
+
+    // Check for run command
+    if(text === 'run' || text === 'run!' || text === 'go run' || text === 'rashid run'){
+      setTimeout(function(){ doRunSequence(); }, 500);
+      return;
+    }
+
+    // Check for peek/hide command
+    if(text === 'peek' || text === 'hide' || text === 'look' || text === 'sneak' || text === 'rashid peek' || text === 'rashid hide'){
+      setTimeout(function(){ doPeekSequence(); }, 500);
+      return;
+    }
   }
 
   // Init on DOM ready
