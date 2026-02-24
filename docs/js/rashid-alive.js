@@ -1,15 +1,17 @@
-/* Rashid Alive v2 — Random idle + sneaky explorer sequence */
+/* Rashid Alive v3 — Random idle + sneaky explorer sequence + tab thoughts */
 (function(){
   var EMOJIS = ['🇦🇪','⭐','✨','💛','🦅','🐪','🌴','☕','🔥','💎','🎮','🏆','🌙','📖','🎉','💪'];
   var IDLE_ACTIONS = ['wave','dance','nod','spin','celebrate'];
   var container, bubbleBox, timer, emojiTimer;
   var sneakyDone = false;
   var sneakyRunning = false;
+  var originalTitle = '';
 
   function init(){
     container = document.getElementById('mascotContainer');
     bubbleBox = document.getElementById('mascotEmojiBubbles');
     if(!container) return;
+    originalTitle = document.title;
 
     // Start random idle actions every 12-25 seconds
     scheduleIdle();
@@ -64,6 +66,14 @@
     setTimeout(function(){ em.remove(); }, 2200);
   }
 
+  function setTabThought(text){
+    document.title = text;
+  }
+
+  function restoreTab(){
+    document.title = originalTitle;
+  }
+
   function showSpeech(text, duration){
     if(!container) return;
     var old = container.querySelector('.rashid-speech-bubble');
@@ -91,49 +101,75 @@
 
     // Step 1: Hide down (0s)
     setSneakyState('sneaky-hide');
+    setTabThought('🤫 *hides quietly*');
 
     // Step 2: Peek up after 1.5s
     setTimeout(function(){
       setSneakyState('sneaky-peek');
-      // Eyes look left then right automatically via CSS animation (3.5s total)
+      setTabThought('👀 anyone there...?');
     }, 1500);
 
-    // Step 3: Hide again after peeking (1.5 + 4 = 5.5s)
+    // Step 2b: Looking left
+    setTimeout(function(){
+      setTabThought('👈 hmm... no one on the left');
+    }, 2800);
+
+    // Step 2c: Looking right
+    setTimeout(function(){
+      setTabThought('👉 what about this side...');
+    }, 4200);
+
+    // Step 3: Hide again after peeking (5.5s)
     setTimeout(function(){
       setSneakyState('sneaky-hide');
+      setTabThought('😏 coast is clear hehe');
     }, 5500);
 
-    // Step 4: Fully gone after hide animation (6.5s), wait ~60 seconds
+    // Step 4: Fully gone (6.5s)
     setTimeout(function(){
       setSneakyState('sneaky-gone');
+      setTabThought('🏃 time for an adventure!');
     }, 6500);
 
-    // Step 5: Run across screen after ~60 seconds (66.5s from start)
+    // Thoughts while gone
+    setTimeout(function(){ setTabThought('🚶 *sneaking away...*'); }, 12000);
+    setTimeout(function(){ setTabThought('🌴 ooh a palm tree!'); }, 20000);
+    setTimeout(function(){ setTabThought('🐪 hello mr camel!'); }, 28000);
+    setTimeout(function(){ setTabThought('☕ mmm i smell karak chai...'); }, 36000);
+    setTimeout(function(){ setTabThought('🏜️ the desert is so pretty'); }, 44000);
+    setTimeout(function(){ setTabThought('💎 is that a pearl?!'); }, 52000);
+    setTimeout(function(){ setTabThought('😅 wait... where am i??'); }, 60000);
+
+    // Step 5: Run across screen (66.5s)
     setTimeout(function(){
       setSneakyState('sneaky-run');
+      setTabThought('🏃💨 GOTTA GO FAST!!');
     }, 66500);
 
-    // Step 6: Run back after running across (66.5 + 3.2 = 69.7s)
+    // Step 6: Run back (69.7s)
     setTimeout(function(){
       setSneakyState('sneaky-runback');
+      setTabThought('🏃💨 WRONG WAY WRONG WAY!!');
     }, 69700);
 
-    // Step 7: Settle at bottom (69.7 + 3.2 = 72.9s)
+    // Step 7: Settle at bottom (72.9s)
     setTimeout(function(){
       setSneakyState('sneaky-settle');
+      setTabThought('😳 ...did anyone see that?');
     }, 72900);
 
     // Step 8: Say "huh" (73.5s)
     setTimeout(function(){
       showSpeech('huh? 😳', 3000);
+      setTabThought('😳 huh? nothing happened...');
     }, 73500);
 
-    // Step 9: Back to normal after speech (77s)
+    // Step 9: Back to normal (77s)
     setTimeout(function(){
       sneakyRunning = false;
       sneakyDone = true;
       setSneakyState('idle');
-      // Restore glow etc by removing leftover classes
+      restoreTab();
       container.className = container.className.replace(/sneaky-\w+/g,'').trim();
       if(!container.classList.contains('mascot-idle')) container.classList.add('mascot-idle');
     }, 77000);
